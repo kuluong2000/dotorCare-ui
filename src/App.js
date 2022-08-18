@@ -9,7 +9,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 // Import css files
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import '@fortawesome/react-fontawesome'
+import "@fortawesome/react-fontawesome";
 
 function App() {
   return (
@@ -17,7 +17,6 @@ function App() {
       <Header></Header>
       <Routes>
         {publicRoutes.map((route, idx) => {
-          console.log(route.component);
           return <Route key={idx} path={route.path} element={<route.component />} />;
         })}
       </Routes>

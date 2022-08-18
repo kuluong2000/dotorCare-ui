@@ -4,19 +4,27 @@ import classNames from "classnames/bind";
 import styles from "./home.module.scss";
 import "./custom-slider.scss";
 import Button from "../../common/button/Button";
+import { Link } from "react-router-dom";
 const cx = classNames.bind(styles);
 export default function Home() {
-  const settings = {
+  const banner = {
     dots: false,
     arrows: true,
     infinite: true,
-    // autoplay: true,
+    autoplay: true,
     speed: 1000,
     slidesToShow: 1,
     slidesToScroll: 1,
     variableWidth: true,
     swipeToSlide: true,
     className: "jio-slick",
+  };
+  const healthCare = {
+    dots: false,
+    arrows: false,
+    slidesToShow: 4,
+    slidesToScroll: 1,
+    className: "health-care-slick",
   };
   return (
     <main>
@@ -25,7 +33,7 @@ export default function Home() {
           <div className="row">
             <div className={cx("banner-main")}>
               <div className={cx("banner-slider")}>
-                <Slider {...settings}>
+                <Slider {...banner}>
                   <div className={cx("slider-image")}>
                     <img src={require("../../assets/images/banner-01.png")} alt="" />
                   </div>
@@ -88,6 +96,65 @@ export default function Home() {
                     <Button btn_blue>Gọi Ngay</Button>
                     <Button btn_green>Đặt Khám</Button>
                   </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section className={cx("health-care")}>
+        <div className="container">
+          <div className="row">
+            <div className="health-care-main">
+              <Slider {...healthCare}>
+                <div to={"/dichvu"} className={cx("health-care-item")}>
+                  <img src={require("../../assets/images/home-visit-bg.png")} alt="" />
+                  <h2 className={cx("health-care-item-title")}>Dịch vụ Bác Sĩ đến nhà</h2>
+                </div>
+                <Link to={"/dichvu"} className={cx("health-care-item")}>
+                  <img src={require("../../assets/images/pharmacy-bg.png")} alt="" />
+                  <h2 className={cx("health-care-item-title")}>Nhà thuốc trực tuyến</h2>
+                </Link>
+                <Link to={"/dichvu"} className={cx("health-care-item")}>
+                  <img src={require("../../assets/images/find-doctor-bg.png")} alt="" />
+                  <h2 className={cx("health-care-item-title")}>Tìm bác sĩ</h2>
+                </Link>
+                <Link to={"/dichvu"} className={cx("health-care-item")}>
+                  <img src={require("../../assets/images/care-packages-bg.png")} alt="" />
+                  <h2 className={cx("health-care-item-title")}>Gói chăm sóc sức khỏe</h2>
+                </Link>
+                <Link to={"/dichvu"} className={cx("health-care-item")}>
+                  <img src={require("../../assets/images/home-visit-bg.png")} alt="" />
+                  <h2 className={cx("health-care-item-title")}>Dịch Vụ Bác Sĩ Đến Nhà</h2>
+                </Link>
+              </Slider>
+            </div>
+          </div>
+        </div>
+        <img className={cx("health-care-inserted")} src={require("../../assets/images/health-care-bottom-wave.svg").default} alt="" />
+      </section>
+      <section className={cx("doctor-come")}>
+        <div className="container">
+          <div className="row">
+            <div className={cx("doctor-come-main")}>
+              <div className={cx("doctor-come-content")}>
+                <h2 className={cx("doctor-come-content-title")}>Bác sĩ đến nhà</h2>
+                <p className={cx("doctor-come-content-desc")}>
+                  Thăm khám tận nơi chỉ từ <span>400.000đ</span>
+                </p>
+                <div className={cx("doctor-come-content-action")}>
+                  <Button btn_green>Đặt Khám Ngay</Button>
+                  <Button btn_blue>Tìm Hiểu Thêm</Button>
+                </div>
+              </div>
+              <div className={cx("doctor-come-social")}>
+                <div className={cx("doctor-come-video")}>
+                  <video className={cx("doctor-come-video-player")} muted autoplay="autoplay" loop="loop" poster="https://cdn.jiohealth.com/jio-website/home-page/jio-website-v2.1.6/assets/images/video-posters/doctors-come-to-you-video-poster.jpg">
+                    <source src="https://cdn.jiohealth.com/video/doctor/Our_Doctors_Come_to_You_Short_Ver_LQ.mp4" type="video/mp4"></source>
+                  </video>
+                </div>
+                <div className={cx("doctor-come-image")}>
+                  <img src={require("../../assets/images/doctors-come-to-you-video-cover.svg").default} alt="" />
                 </div>
               </div>
             </div>

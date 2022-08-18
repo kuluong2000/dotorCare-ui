@@ -216,3 +216,105 @@
     margin-right: 10px;
   }
 }
+
+// Health Care
+.health-care {
+  margin-top: -30px;
+  position: relative;
+  z-index: 99;
+  background: transparent;
+  width: 100%;
+  height: auto;
+}
+.health-care-main {
+  padding-top: 30px;
+}
+.health-care-item {
+  position: relative;
+  display: inline-block;
+  background-color: #daf5fb;
+  width: 312px !important;
+  height: 415px;
+  border-radius: 20px;
+  padding: 30px;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  z-index: 999;
+  img {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 312px;
+    object-fit: cover;
+  }
+  h2 {
+    font-size: 30px;
+    color: var(--color-dark-blue);
+    font-weight: 600;
+  }
+}
+.health-care-inserted {
+  width: 100%;
+}
+
+//Doctor Come
+
+.doctor-come {
+  position: relative;
+  height: 910px;
+  &-content {
+    position: absolute;
+    left: auto;
+    top: 50%;
+    &-title {
+      font-size: 48px;
+      color: var(--color-dark-blue);
+      line-height: 53px;
+      font-weight: bold;
+      position: relative;
+      padding-bottom: 30px;
+      &::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 70px;
+        height: 8px;
+        border-radius: 9999px;
+        background-color: var(--color-dark-blue);
+      }
+    }
+    &-desc {
+      font-size: 18px;
+      margin: 18px 0 16px 0;
+      span {
+        color: var(--text-color);
+        font-weight: bold;
+      }
+    }
+    &-action button:first-child {
+      margin-right: 20px;
+    }
+  }
+
+  &-video {
+    overflow: hidden;
+    position: absolute;
+    top: 0;
+    right: -20px;
+    z-index: -1;
+    &-player {
+      width: 57vw;
+    }
+  }
+  &-image {
+    position: absolute;
+    top: 0;
+    right: -20px;
+    z-index: 99;
+    img {
+      width: 60vw;
+    }
+  }
+}
