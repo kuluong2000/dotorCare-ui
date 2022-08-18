@@ -1,0 +1,17 @@
+<svg width="884" height="610" viewBox="0 0 884 610" fill="none" xmlns="http://www.w3.org/2000/svg">
+<mask id="mask0" mask-type="alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="884" height="610">
+<rect width="884" height="610" fill="#C4C4C4"/>
+</mask>
+<g mask="url(#mask0)">
+<path opacity="0.5" d="M891.734 82.7611L1021.86 203.797C1034.07 215.148 1041 231.064 1041 247.731V580.818C1041 623.681 997.355 652.719 957.82 636.159L135.967 291.919C80.2386 268.576 90.0628 186.799 149.734 177.32L841.458 67.4379C859.681 64.543 878.223 70.1942 891.734 82.7611Z" fill="#F3F8FF"/>
+<path d="M709.127 23.5574L942.862 131.983C964.054 141.814 977.614 163.051 977.614 186.412V507.325C977.614 550.188 933.968 579.226 894.433 562.667L76.424 220.036C20.3992 196.57 30.7134 114.261 90.7962 105.345L675.07 18.6363C686.659 16.9165 698.498 18.6272 709.127 23.5574Z" fill="#F3F8FF"/>
+<rect x="699.152" y="433" width="10.6957" height="41" rx="5.34783" fill="#567FEA"/>
+<rect x="684" y="458.848" width="11.587" height="41" rx="5.79348" transform="rotate(-90 684 458.848)" fill="#567FEA"/>
+<g opacity="0.5">
+<rect x="669" y="84" width="14" height="59" rx="7" fill="#5AD3C0"/>
+<rect x="646" y="121" width="15" height="60" rx="7.5" transform="rotate(-90 646 121)" fill="#5AD3C0"/>
+</g>
+<rect x="8.70215" y="310" width="6.21622" height="23" rx="3.10811" fill="#4CE1C6"/>
+<rect y="324.297" width="6.21622" height="23" rx="3.10811" transform="rotate(-90 0 324.297)" fill="#4CE1C6"/>
+</g>
+</svg>

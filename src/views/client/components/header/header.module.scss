@@ -1,0 +1,112 @@
+.header {
+  width: 100%;
+  padding: 12px 0;
+  background-color: var(--text-white);
+
+  &-main {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  &-items {
+    display: flex;
+  }
+  &-item a {
+    color: #111c63;
+    font-weight: 500;
+    position: relative;
+    padding-bottom: 5px;
+    transition: all 0.25s linear;
+    &::before {
+      content: "";
+      position: absolute;
+      height: 2px;
+      width: 100%;
+      bottom: 0;
+      background-color: var(--color-green);
+      transition: all 0.25s linear;
+      transform: scale(0);
+    }
+    &:hover::before {
+      transform: scale(1);
+    }
+    &:hover {
+      font-weight: 600;
+      color: #111c63;
+    }
+  }
+  &-item:not(:last-child) {
+    margin-right: 10px;
+  }
+}
+.wrapper {
+  width: 100%;
+  max-width: 1170px;
+  display: block;
+  margin: 0 auto;
+}
+.multi-language {
+  display: flex;
+  align-items: center;
+  position: relative;
+  margin-left: 5px;
+}
+.dropdown-toggle {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  z-index: 999;
+  img {
+    width: 20px;
+    height: 20px;
+    border-radius: 100%;
+    object-fit: cover;
+    margin-right: 5px;
+  }
+  span {
+    margin-right: 5px;
+  }
+}
+.dropdown-menu {
+  width: 158px;
+  position: absolute;
+  background-color: var(--color-white);
+  top: 100%;
+  transform: translateY(15px);
+  border-radius: 5px;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.2s ease;
+  z-index: 999;
+  p {
+    display: flex;
+    width: 100%;
+    cursor: pointer;
+    padding: 12px 20px;
+    &:hover {
+      background-color: #eee;
+    }
+    img {
+      width: 20px;
+      height: 20px;
+      border-radius: 100%;
+      object-fit: cover;
+      margin-right: 5px;
+    }
+    span {
+      padding: 2px 8px 0 5px;
+    }
+  }
+}
+.dropdown-menu.open {
+  opacity: 1;
+  visibility: visible;
+}
+.app-list {
+  display: flex;
+  align-items: center;
+}
+.app-item:first-child {
+  margin-right: 10px;
+}

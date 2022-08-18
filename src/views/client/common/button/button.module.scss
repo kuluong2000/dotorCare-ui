@@ -1,0 +1,17 @@
+.btn {
+  display: inline-block;
+  text-decoration: none;
+  cursor: pointer;
+  padding: 10px 20px;
+  color: var(--color-white);
+  font-size: 16px;
+  font-weight: 600;
+  font-family: var(--primary-font);
+  border-radius: 999px;
+}
+.btn_green {
+  background-color: var(--color-green);
+}
+.btn_blue {
+  background-color: var(--color-blue);
+}
