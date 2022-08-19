@@ -194,6 +194,66 @@ export default function Home() {
           </div>
         </div>
       </section>
+      <section className={cx("feeling")}>
+        <div className="container">
+          <div className="row">
+            <div className={cx("feeling-main")}>
+              <div className={cx("feeling-content")}>
+                <h2 className={cx("feeling-content-title")}>
+                  Bạn thấy không khỏe?
+                  <br />
+                  Hãy để Jio Health chăm sóc cho bạn!
+                </h2>
+                <p className={cx("feeling-content-desc")}>Tìm hiểu thêm về các dịch vụ chăm sóc sức khỏe của chúng tôi, từ cảm mạo thông thường đến các bệnh mạn tính - các bác sĩ Jio thân thiện sẽ tận tình chăm sóc bạn và gia đình.</p>
+                <div className={cx("feeling-content-info")}>
+                  <div className={cx("feeling-content-row")}>
+                    <img src={require("../../assets/images/stethoscope-icon.svg").default} alt="" />
+                    <span>Dịch vụ Bác sĩ & Điều dưỡng</span>
+                  </div>
+                  <div className={cx("feeling-content-row")}>
+                    <img src={require("../../assets/images/lab-icon.svg").default} alt="" />
+                    <span>Lấy mẫu xét nghiệm</span>
+                  </div>
+                </div>
+                <div className={cx("feeling-btn-more")}>
+                  <Button btn_green>Tìm hiểu thêm</Button>
+                </div>
+              </div>
+              <div className={cx("feeling-image")}>
+                <img src={require("../../assets/images/not-feeling-well.svg").default} alt="" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className={cx("video-chat-section")}>
+        <div className="container">
+          <div className="row">
+            <div className={cx("video-chat-main")}>
+              <div className={cx("video-chat-image")}>
+                <img src={require("../../assets/images/24-7-video-chat-vietnamese.png")} alt="" />
+              </div>
+              <div className={cx("video-chat-content")}>
+                <h2 className={cx("video-chat-content-title")}>Tư vấn sức khỏe từ xa 24/7 qua video & chat</h2>
+                <p className={cx("video-chat-content-desc")}>
+                  Bạn cần sự tư vấn chuyên môn khi gặp các vấn đề sức khỏe? Dù bạn ở đâu hay vào bất cứ lúc nào, các bác sĩ chuyên khoa của Jio Health luôn sẵn sàng tư vấn, giải đáp đáp mọi thắc mắc của bạn
+                </p>
+                <div className={cx("video-chat-content-info")}>
+                  <div className={cx("video-chat-content-row")}>
+                    <img src={require("../../assets/images/video-icon.svg").default} alt="" />
+                    <span>Video call với bác sĩ</span>
+                  </div>
+                  <div className={cx("video-chat-content-row")}>
+                    <img src={require("../../assets/images/chat-icon.svg").default} alt="" />
+                    <span>Chat với bác sĩ</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
     </main>
   );
 }

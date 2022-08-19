@@ -323,7 +323,7 @@
 
 .pharmacy {
   position: relative;
-  height: 58vw;
+  height: 43vw;
 }
 .pharmacy-image {
   position: absolute;
@@ -395,5 +395,136 @@
     button {
       padding: 8px 46px;
     }
+  }
+}
+
+// Feeling
+.feeling {
+  position: relative;
+  height: 50vw;
+  width: 100vw;
+}
+.feeling-content {
+  position: absolute;
+  width: 35vw;
+  left: auto;
+  top: 22vw;
+  &-title {
+    position: relative;
+    font-size: 48px;
+    line-height: 53px;
+    color: var(--color-dark-blue);
+    white-space: pre-wrap;
+    font-weight: bold;
+    padding-bottom: 30px;
+    &::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 70px;
+      height: 8px;
+      border-radius: 999px;
+      background-color: var(--color-dark-blue);
+    }
+  }
+  &-desc {
+    font-size: 18px;
+    margin: 18px 0 16px 0;
+    font-weight: 500;
+  }
+  &-info {
+    display: flex;
+  }
+
+  &-row {
+    display: flex;
+    align-items: center;
+    &:first-child {
+      margin-right: 30px;
+    }
+    img {
+      width: 30px;
+      height: 30px;
+      object-fit: cover;
+    }
+    span {
+      font-weight: 600;
+      margin-left: 5px;
+    }
+  }
+}
+.feeling-btn-more {
+  margin-top: 30px;
+}
+.feeling-image {
+  position: absolute;
+  right: 0;
+  top: 20px;
+  img {
+    height: 50vw;
+  }
+}
+//Video chat Section
+.video-chat-section {
+  position: relative;
+  height: 55vw;
+}
+.video-chat-content {
+  position: absolute;
+  width: 40vw;
+  top: 9vw;
+  right: 2vw;
+  &-title {
+    position: relative;
+    font-size: 48px;
+    line-height: 53px;
+    color: var(--color-dark-blue);
+    white-space: pre-wrap;
+    font-weight: bold;
+    padding-bottom: 30px;
+    &::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 70px;
+      height: 8px;
+      border-radius: 999px;
+      background-color: var(--color-dark-blue);
+    }
+  }
+  &-desc {
+    font-size: 18px;
+    margin: 18px 0 16px 0;
+    font-weight: 600;
+  }
+  &-info {
+    display: flex;
+  }
+
+  &-row {
+    display: flex;
+    align-items: center;
+    &:first-child {
+      margin-right: 30px;
+    }
+    img {
+      width: 30px;
+      height: 30px;
+      object-fit: cover;
+    }
+    span {
+      font-weight: 600;
+      margin-left: 5px;
+    }
+  }
+}
+.video-chat-image {
+  position: absolute;
+  left: 0;
+  top: 0;
+  img {
+    width: 85vw;
   }
 }
