@@ -318,3 +318,82 @@
     }
   }
 }
+
+// Pharmacy
+
+.pharmacy {
+  position: relative;
+  height: 58vw;
+}
+.pharmacy-image {
+  position: absolute;
+  top: 0;
+  left: -20px;
+  img {
+    width: 100vw;
+  }
+}
+.pharmacy-video {
+  position: absolute;
+  top: 25%;
+  left: 0;
+  &-player {
+    width: 51vw;
+  }
+}
+.pharmacy-content {
+  position: absolute;
+  width: 41vw;
+  top: 17vw;
+  right: 7vw;
+  &-title {
+    font-size: 48px;
+    line-height: 53px;
+    white-space: pre-wrap;
+    color: var(--color-dark-blue);
+    font-weight: bold;
+    padding-bottom: 30px;
+    position: relative;
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 70px;
+      height: 8px;
+      border-radius: 999px;
+      background-color: var(--color-dark-blue);
+    }
+  }
+  &-desc {
+    font-size: 18px;
+    margin: 18px 0 16px 0;
+    font-weight: 500;
+  }
+  &-info {
+    display: flex;
+    align-items: center;
+  }
+  &-row:first-child {
+    margin-right: 30px;
+  }
+  &-row {
+    display: flex;
+    align-items: center;
+    img {
+      width: 30px;
+      height: 30px;
+      object-fit: cover;
+    }
+    span {
+      font-weight: 600;
+      margin-left: 8px;
+    }
+  }
+  &-shop-now {
+    margin: 31px -15px 0;
+    button {
+      padding: 8px 46px;
+    }
+  }
+}

@@ -149,12 +149,45 @@ export default function Home() {
               </div>
               <div className={cx("doctor-come-social")}>
                 <div className={cx("doctor-come-video")}>
-                  <video className={cx("doctor-come-video-player")} muted autoplay="autoplay" loop="loop" poster="https://cdn.jiohealth.com/jio-website/home-page/jio-website-v2.1.6/assets/images/video-posters/doctors-come-to-you-video-poster.jpg">
+                  <video className={cx("doctor-come-video-player")} muted autoPlay="autoplay" loop="loop" poster="https://cdn.jiohealth.com/jio-website/home-page/jio-website-v2.1.6/assets/images/video-posters/doctors-come-to-you-video-poster.jpg">
                     <source src="https://cdn.jiohealth.com/video/doctor/Our_Doctors_Come_to_You_Short_Ver_LQ.mp4" type="video/mp4"></source>
                   </video>
                 </div>
                 <div className={cx("doctor-come-image")}>
                   <img src={require("../../assets/images/doctors-come-to-you-video-cover.svg").default} alt="" />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section className={cx("pharmacy")}>
+        <div className="container">
+          <div className="row">
+            <div className={cx("pharmacy-main")}>
+              <div className={cx("pharmacy-video")}>
+                <video muted autoPlay="autoplay" loop="loop" className={cx("pharmacy-video-player")} poster="https://cdn.jiohealth.com/jio-website/home-page/jio-website-v2.1.6/assets/images/video-posters/online-pharmacy-video-poster.jpg">
+                  <source src="https://cdn.jiohealth.com/video/doctor/Pharmacy_Short_Version_LQ.mp4" type="video/mp4"></source>
+                </video>
+              </div>
+              <div className={cx("pharmacy-image")}>
+                <img src={require("../../assets/images/online-pharmacy-video-cover.svg").default} alt="" />
+              </div>
+              <div className={cx("pharmacy-content")}>
+                <h2 className={cx("pharmacy-content-title")}>Nhà Thuốc Trực Tuyến Jio</h2>
+                <p className={cx("pharmacy-content-desc")}>Dễ dang đặt trực tuyến thuốc và các sản phẩm chăm sóc sức khỏe chính hãng vơi mức giá tiết kiệm</p>
+                <div className={cx("pharmacy-content-info")}>
+                  <div className={cx("pharmacy-content-row")}>
+                    <img src={require("../../assets/images/delivery-icon.svg").default} alt="" />
+                    <span>Giao hàng nhanh trong 2 giờ</span>
+                  </div>
+                  <div className={cx("pharmacy-content-row")}>
+                    <img src={require("../../assets/images/discount-icon.svg").default} alt="" />
+                    <span>Tiết kiệm 20% tất cả các sản phẩm</span>
+                  </div>
+                </div>
+                <div className={cx("pharmacy-content-shop-now")}>
+                  <Button btn_green>Xem Ngay</Button>
                 </div>
               </div>
             </div>
