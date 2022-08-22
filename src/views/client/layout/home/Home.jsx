@@ -3,6 +3,7 @@ import Slider from "react-slick";
 import classNames from "classnames/bind";
 import styles from "./home.module.scss";
 import "./custom-slider.scss";
+import "./view-responsive.scss";
 import Button from "../../common/button/Button";
 import Image from "../../common/image/Image";
 import { Link } from "react-router-dom";

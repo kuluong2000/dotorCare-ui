@@ -772,3 +772,11 @@
     object-fit: cover;
   }
 }
+//----- Responsive
+
+@media (min-width: 1400px) and (max-width: 1824px) {
+  // app download section
+  .app-download-images {
+    right: 150px;
+  }
+}
