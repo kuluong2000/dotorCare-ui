@@ -338,7 +338,7 @@
   top: 25%;
   left: 0;
   &-player {
-    width: 51vw;
+    width: 57vw;
   }
 }
 .pharmacy-content {
@@ -468,7 +468,7 @@
 //Video chat Section
 .video-chat-section {
   position: relative;
-  height: 55vw;
+  height: 50vw;
 }
 .video-chat-content {
   position: absolute;
@@ -526,5 +526,249 @@
   top: 0;
   img {
     width: 85vw;
+  }
+}
+
+//Health Resources
+
+.health-resources {
+  position: relative;
+  height: 26vw;
+}
+.health-resources-content {
+  width: 39vw;
+  position: absolute;
+  top: 5vw;
+  left: auto;
+  &-title {
+    position: relative;
+    font-size: 48px;
+    line-height: 53px;
+    color: var(--color-dark-blue);
+    white-space: pre-wrap;
+    font-weight: bold;
+    padding-bottom: 30px;
+    &::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 70px;
+      height: 8px;
+      border-radius: 999px;
+      background-color: var(--color-dark-blue);
+    }
+  }
+  &-desc {
+    font-size: 18px;
+    margin: 18px 0 16px 0;
+    font-weight: 500;
+    a {
+      color: #007bff;
+    }
+  }
+}
+.health-resources-image {
+  position: absolute;
+  top: -50px;
+  right: -20px;
+  z-index: -1;
+  img {
+    height: 40vw;
+  }
+}
+.news-main-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  img {
+    width: 24vw;
+    object-fit: cover;
+  }
+}
+
+.health-resources-list {
+  position: absolute;
+  width: 730px;
+  top: 4vw;
+  right: 0;
+}
+.health-resources-items {
+  display: flex;
+  &:nth-child(2) {
+    margin-left: 70px;
+    margin-top: 20px;
+  }
+  &:nth-child(3) {
+    margin-left: -50px;
+    margin-top: 20px;
+  }
+}
+.health-resources-item {
+  display: flex;
+  align-items: center;
+  height: 80px;
+  width: 220px;
+  padding: 17px;
+  position: relative;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 3px 15px rgb(0 0 0 / 10%);
+  -webkit-transition: 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+  transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+  cursor: pointer;
+  &:hover {
+    transform: scale(1.25);
+  }
+  &:not(:last-child) {
+    margin-right: 30px;
+  }
+  img {
+    width: 30px;
+    height: 30px;
+  }
+  &-info {
+    margin-left: 10px;
+    h4 {
+      font-size: 16px;
+      margin-bottom: 8px;
+      font-weight: bold;
+    }
+    span {
+      color: var(--color-gray);
+      margin-bottom: 8px;
+      font-weight: 600;
+    }
+  }
+}
+
+.news {
+  position: relative;
+  height: 32vw;
+}
+.news-main {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.news-list {
+  position: absolute;
+  top: 10vw;
+  left: auto;
+}
+.news-item {
+  display: flex;
+  &-btn {
+    position: relative;
+    background-color: var(--color-white);
+    border-radius: 10px;
+    box-shadow: 0 3px 15px rgb(0 0 0 / 10%);
+    transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+    height: 60px;
+    padding: 0 15px;
+    transition: all 0.25s linear;
+    &:hover {
+      transform: scale(1.15);
+    }
+    &:nth-child(even) {
+      margin: 0 20px 0 20px;
+    }
+  }
+  &:nth-child(even) {
+    margin: 20px 0 20px 0;
+  }
+}
+.news-content {
+  position: absolute;
+  width: 28vw;
+  top: 10vw;
+  right: 8vw;
+  &-title {
+    position: relative;
+    font-size: 48px;
+    line-height: 53px;
+    color: var(--color-dark-blue);
+    white-space: pre-wrap;
+    font-weight: bold;
+    padding-bottom: 30px;
+    &::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 70px;
+      height: 8px;
+      border-radius: 999px;
+      background-color: var(--color-dark-blue);
+    }
+  }
+
+  &-desc {
+    font-size: 18px;
+    margin: 18px 0 16px 0;
+    font-weight: 500;
+    a {
+      color: #007bff;
+    }
+  }
+}
+
+// app Download Section
+.app-download {
+  position: relative;
+  z-index: 1;
+  background-image: url("../../assets/images/down-load-app-bg.svg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 490px;
+  width: 100%;
+}
+.app-download-main {
+  position: relative;
+  margin-top: 195px !important;
+}
+.app-download-content {
+  padding-left: 103px;
+  &-title {
+    color: #fff;
+    font-size: 30px;
+    line-height: 1;
+    margin-bottom: 30px;
+    width: 60%;
+    font-weight: bold;
+  }
+}
+.app-download-links button {
+  width: max-content;
+  border-radius: 0;
+  margin-right: 20px;
+  border-radius: 15px;
+  padding: 0;
+  img {
+    width: 160px;
+    height: 130px;
+    object-fit: cover;
+  }
+}
+.app-download-images {
+  position: absolute;
+  right: 0;
+  bottom: -75px;
+  &-iconmess {
+    position: absolute;
+    bottom: 80px;
+    right: 310px;
+  }
+  &-doctor {
+    width: 345px;
+  }
+  &-iconphone {
+    position: absolute;
+    top: 0;
+    right: auto;
+    width: 161px;
+    height: 161px;
+    object-fit: cover;
   }
 }

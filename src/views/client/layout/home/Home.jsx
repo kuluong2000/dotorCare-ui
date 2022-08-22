@@ -4,6 +4,7 @@ import classNames from "classnames/bind";
 import styles from "./home.module.scss";
 import "./custom-slider.scss";
 import Button from "../../common/button/Button";
+import Image from "../../common/image/Image";
 import { Link } from "react-router-dom";
 const cx = classNames.bind(styles);
 export default function Home() {
@@ -226,7 +227,6 @@ export default function Home() {
           </div>
         </div>
       </section>
-
       <section className={cx("video-chat-section")}>
         <div className="container">
           <div className="row">
@@ -249,6 +249,170 @@ export default function Home() {
                     <span>Chat với bác sĩ</span>
                   </div>
                 </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section className={cx("health-resources")}>
+        <div className="container">
+          <div className="row">
+            <div className={cx("health-resources-main")}>
+              <div className={cx("health-resources-content")}>
+                <h2 className={cx("health-resources-content-title")}>Thông tin sức khỏe dành cho bạn</h2>
+                <p className={cx("health-resources-content-desc")}>
+                  360 độ nội dung sức khỏe thuộc các chủ đề được nhiều người quan tâm hiện nay, dưới sự xây dựng từ các chuyên gia sức khỏe tại Jio Health.
+                  <br />
+                  <br />
+                  Cần xem thêm nhiều bài viết chuyên khoa thú vị khác? <Link to="/tin-tuc">Blog Jio Health</Link> là điểm đến về tin tức và kiến thức sức khỏe lý tưởng dành cho bạn
+                </p>
+              </div>
+              <div className={cx("health-resources-image")}>
+                <img src={require("../../assets/images/health-resource-background.svg").default} alt="" />
+              </div>
+              <div className={cx("health-resources-list")}>
+                <div className={cx("health-resources-items")}>
+                  <div className={cx("health-resources-item")}>
+                    <img src={require("../../assets/images/cardiology-icon.svg").default} alt="" />
+                    <div className={cx("health-resources-item-info")}>
+                      <h4>Tim mạch</h4>
+                      <span>13 bài viết</span>
+                    </div>
+                  </div>
+                  <div className={cx("health-resources-item")}>
+                    <img src={require("../../assets/images/pediatrics-icon.svg").default} alt="" />
+                    <div className={cx("health-resources-item-info")}>
+                      <h4>Nhi Khoa</h4>
+                      <span>21 bài viết</span>
+                    </div>
+                  </div>
+                </div>
+                <div className={cx("health-resources-items")}>
+                  <div className={cx("health-resources-item")}>
+                    <img src={require("../../assets/images/endocrinology-icon.svg").default} alt="" />
+                    <div className={cx("health-resources-item-info")}>
+                      <h4>Đái tháo đường</h4>
+                      <span>7 bài viết</span>
+                    </div>
+                  </div>
+                  <div className={cx("health-resources-item")}>
+                    <img src={require("../../assets/images/kidneys-icon.svg").default} alt="" />
+                    <div className={cx("health-resources-item-info")}>
+                      <h4>Thận - Tiết Niệu</h4>
+                      <span>10 bài viết</span>
+                    </div>
+                  </div>
+                </div>
+                <div className={cx("health-resources-items")}>
+                  <div className={cx("health-resources-item")}>
+                    <img src={require("../../assets/images/fetus-icon.svg").default} alt="" />
+                    <div className={cx("health-resources-item-info")}>
+                      <h4>Thai sản</h4>
+                      <span>71 bài viết</span>
+                    </div>
+                  </div>
+                  <div className={cx("health-resources-item")}>
+                    <img src={require("../../assets/images/sexual-health-icon.svg").default} alt="" />
+                    <div className={cx("health-resources-item-info")}>
+                      <h4>Sức khỏe giới tính</h4>
+                      <span>12 bài viết</span>
+                    </div>
+                  </div>
+                  <div className={cx("health-resources-item")}>
+                    <img src={require("../../assets/images/woman-icon.svg").default} alt="" />
+                    <div className={cx("health-resources-item-info")}>
+                      <h4>Sức khỏe phụ nữ</h4>
+                      <span>8 bài viết</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section className={cx("news")}>
+        <div className="container">
+          <div className="row">
+            <div className={cx("news-main")}>
+              <div className={cx("news-main-image")}>
+                <Image src={require("../../assets/images/as-seen-on-news-background.svg").default}></Image>
+              </div>
+              <div className={cx("news-list")}>
+                <div className={cx("news-item")}>
+                  <Button className={cx("news-item-btn")}>
+                    <img src={require("../../assets/images/vietcetera.svg").default} alt="" />
+                  </Button>
+
+                  <Button className={cx("news-item-btn")}>
+                    <img src={require("../../assets/images/nhipcaudautu.svg").default} alt="" />
+                  </Button>
+
+                  <Button className={cx("news-item-btn")}>
+                    <img src={require("../../assets/images/vnexpress.svg").default} alt="" />
+                  </Button>
+                </div>
+                <div className={cx("news-item")}>
+                  <Button className={cx("news-item-btn")}>
+                    <img src={require("../../assets/images/dantri.svg").default} alt="" />
+                  </Button>
+
+                  <Button className={cx("news-item-btn")}>
+                    <img src={require("../../assets/images/cafef.svg").default} alt="" />
+                  </Button>
+
+                  <Button className={cx("news-item-btn")}>
+                    <img src={require("../../assets/images/thanh-nien.svg").default} alt="" />
+                  </Button>
+                </div>
+                <div className={cx("news-item")}>
+                  <Button className={cx("news-item-btn")}>
+                    <img src={require("../../assets/images/htv9.svg").default} alt="" />
+                  </Button>
+
+                  <Button className={cx("news-item-btn")}>
+                    <img src={require("../../assets/images/zing.svg").default} alt="" />
+                  </Button>
+
+                  <Button className={cx("news-item-btn")}>
+                    <img src={require("../../assets/images/vietnamnet.svg").default} alt="" />
+                  </Button>
+                  <Button className={cx("news-item-btn")}>
+                    <img src={require("../../assets/images/tuoitre.svg").default} alt="" />
+                  </Button>
+                </div>
+              </div>
+              <div className={cx("news-content")}>
+                <h2 className={cx("news-content-title")}>Truyền thông nói về Jio Health</h2>
+                <p className={cx("news-content-desc")}>Cùng khám phá những góc nhìn đa chiều từ các cơ quan truyền thông về Jio Health và hiểu hơn về cách chúng tôi cải tiến dịch vụ chăm sóc sức khỏe</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section className={cx("app-download")}>
+        <div className="container">
+          <div className="row">
+            <div className={cx("app-download-main")}>
+              <div className={cx("app-download-content")}>
+                <h2 className={cx("app-download-content-title")}>
+                  Tìm hiểu thêm về Jio Health?
+                  <br />
+                  Tải ứng dụng ngay!
+                </h2>
+                <div className={cx("app-download-links")}>
+                  <Button>
+                    <Image src={require("../../assets/images/app-store-vi.svg").default}></Image>
+                  </Button>
+                  <Button>
+                    <Image src={require("../../assets/images/google-play-vi.svg").default}></Image>
+                  </Button>
+                </div>
+              </div>
+              <div className={cx("app-download-images")}>
+                <Image className={cx("app-download-images-iconmess")} src={require("../../assets/images/message-icon.svg").default}></Image>
+                <Image className={cx("app-download-images-doctor")} src={require("../../assets/images/doctor-get-in-touch.png")}></Image>
+                <Image className={cx("app-download-images-iconphone")} src={require("../../assets/images/virtual-care-icon.svg").default}></Image>
               </div>
             </div>
           </div>
