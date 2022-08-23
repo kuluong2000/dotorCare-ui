@@ -305,7 +305,7 @@
     overflow: hidden;
     position: absolute;
     top: 0;
-    right: -20px;
+    right: -0;
     z-index: -1;
     &-player {
       width: 57vw;
@@ -314,7 +314,7 @@
   &-image {
     position: absolute;
     top: 0;
-    right: -20px;
+    right: 0;
     z-index: 99;
     img {
       width: 60vw;
@@ -574,7 +574,7 @@
 .health-resources-image {
   position: absolute;
   top: -50px;
-  right: -20px;
+  right: 0;
   z-index: -1;
   img {
     height: 40vw;
