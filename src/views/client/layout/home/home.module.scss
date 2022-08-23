@@ -1,6 +1,8 @@
 // Section Banner
 .banner {
   background-color: var(--color-white);
+  width: 100%;
+  overflow: hidden;
   height: 680px;
 }
 .banner-main {
@@ -267,6 +269,7 @@
     position: absolute;
     left: auto;
     top: 50%;
+    transform: translateY(-50%);
     &-title {
       font-size: 48px;
       color: var(--color-dark-blue);
@@ -741,6 +744,7 @@
 }
 .app-download-links button {
   width: max-content;
+  height: 120px;
   border-radius: 0;
   margin-right: 20px;
   border-radius: 15px;
@@ -775,8 +779,20 @@
 //----- Responsive
 
 @media (min-width: 1400px) and (max-width: 1824px) {
-  // app download section
+  //dortor-come
+  .doctor-come {
+    height: 720px;
+  }
+
   .app-download-images {
+    // app download section
     right: 150px;
   }
 }
+@media (min-width: 1200px) and (max-width: 1399px) {
+}
+// @media (min-width: 992px) and (max-width: 1199px) {
+//   .header-items {
+//     flex-direction: column;
+//   }
+// }
