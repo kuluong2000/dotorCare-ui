@@ -758,7 +758,7 @@
 .app-download-images {
   position: absolute;
   right: 0;
-  bottom: -75px;
+  bottom: -85px;
   &-iconmess {
     position: absolute;
     bottom: 80px;
@@ -790,9 +790,835 @@
   }
 }
 @media (min-width: 1200px) and (max-width: 1399px) {
+  //banner
+
+  .slider-image img {
+    width: 850px;
+  }
+  .content {
+    top: 45%;
+  }
+  .heart-icon {
+    width: 65px;
+    left: -35px;
+  }
+  .clinic-icon {
+    right: 40px;
+    width: 85px;
+  }
+
+  //section clinic
+  .clinic {
+    padding-top: 250px;
+    margin-bottom: 25px;
+  }
+
+  //health-care
+  .health-care-item {
+    width: 265px !important;
+    img {
+      width: 265px;
+    }
+  }
+
+  //doctor come
+  .doctor-come {
+    height: 660px;
+  }
+  .doctor-come-content-title {
+    font-size: 30px;
+  }
+
+  // pharmacy
+  .pharmacy-content-info {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .pharmacy-content-title {
+    font-size: 30px;
+  }
+
+  //feeling
+  .feeling {
+    height: 60vw;
+  }
+  .feeling-content-title {
+    font-size: 30px;
+  }
+  // video-chat
+
+  .video-chat-content {
+    width: 34vw;
+  }
+  .video-chat-content-title {
+    font-size: 30px;
+  }
+
+  //health resources
+  .health-resources {
+    height: 65vw;
+  }
+  .health-resources-content-title {
+    font-size: 30px;
+  }
+  .health-resources-content {
+    width: 40vw;
+  }
+  .health-resources-list {
+    top: 30vw;
+    right: 45%;
+    transform: translateX(50%);
+  }
+  .health-resources-image {
+    top: 70%;
+    transform: translateY(-50%);
+    img {
+      height: 50vw;
+    }
+  }
+  // news
+  .news {
+    height: 35vw;
+  }
+  .news-content {
+    width: 70vw;
+    top: 5vw;
+    right: unset;
+    left: auto;
+  }
+  .news-list {
+    top: 20vw;
+    left: auto;
+    z-index: 999;
+  }
+
+  //App download
+  .app-download {
+    background-size: 100%;
+    height: 380px;
+  }
+
+  .app-download-main {
+    margin-top: 95px !important;
+  }
+  .app-download-content {
+    padding-top: 30px;
+  }
+  .app-download-images {
+    bottom: -45px;
+    right: 15%;
+  }
+  .app-download-images-doctor {
+    width: 300px;
+  }
+  .app-download-images-iconmess {
+    bottom: 70px;
+    right: 270px;
+  }
+  .app-download-images-iconphone {
+    right: -40%;
+  }
 }
-// @media (min-width: 992px) and (max-width: 1199px) {
-//   .header-items {
-//     flex-direction: column;
-//   }
-// }
+@media (min-width: 992px) and (max-width: 1199px) {
+  //banner
+
+  .slider-image img {
+    width: 750px;
+  }
+  .content {
+    top: 40%;
+    padding: 40px 20px 35px 0;
+  }
+  .title {
+    font-size: 38px;
+  }
+
+  .heart-icon {
+    width: 65px;
+    left: -25px;
+  }
+  .clinic-icon {
+    right: -40px;
+    width: 85px;
+  }
+
+  //section clinic
+  .clinic {
+    padding-top: 140px;
+    margin-bottom: 25px;
+  }
+  .clinic-title {
+    font-size: 22px;
+    line-height: 30px;
+    line-height: 30px;
+  }
+  .clinic-content {
+    width: 100%;
+    height: 400px;
+  }
+  .clinic-image {
+    width: 460px;
+    height: 360px;
+  }
+
+  //health-care
+  .health-care-item {
+    width: 290px !important;
+    img {
+      width: 290px;
+    }
+  }
+
+  //doctor come
+  .doctor-come {
+    height: 450px;
+  }
+  .doctor-come-content-title {
+    font-size: 22px;
+    line-height: 30px;
+  }
+
+  // pharmacy
+  .pharmacy-content-info {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .pharmacy-content-title {
+    font-size: 22px;
+    line-height: 30px;
+  }
+
+  //feeling
+  .feeling {
+    height: 55vw;
+  }
+  .feeling-content {
+    width: 50vw;
+    top: 20vw;
+  }
+  .feeling-content-title {
+    font-size: 22px;
+    line-height: 30px;
+  }
+  // video-chat
+
+  .video-chat-content {
+    width: 40vw;
+  }
+  .video-chat-content-title {
+    font-size: 22px;
+    line-height: 30px;
+  }
+  .video-chat-image img {
+    width: 75vw;
+    object-fit: cover;
+  }
+
+  //health resources
+  .health-resources {
+    height: 65vw;
+  }
+  .health-resources-content-title {
+    font-size: 22px;
+    line-height: 30px;
+  }
+  .health-resources-content {
+    width: 80vw;
+  }
+  .health-resources-list {
+    top: 30vw;
+    right: 45%;
+    transform: translateX(50%);
+  }
+  .health-resources-image {
+    top: 70%;
+    transform: translateY(-50%);
+    img {
+      height: 50vw;
+    }
+  }
+  // news
+  .news {
+    height: 42vw;
+  }
+  .news-content {
+    width: 70vw;
+    top: 5vw;
+    right: unset;
+    left: auto;
+  }
+  .news-content-title {
+    font-size: 22px;
+    line-height: 30px;
+  }
+  .news-list {
+    top: 20vw;
+    left: auto;
+    z-index: 999;
+  }
+
+  //App download
+  .app-download {
+    background-size: 100%;
+    height: 315px;
+  }
+
+  .app-download-main {
+    margin-top: 50px !important;
+  }
+  .app-download-content {
+    padding-top: 46px;
+  }
+  .app-download-content-title {
+    font-size: 22px;
+  }
+  .app-download-images {
+    bottom: -25px;
+    right: 15%;
+  }
+  .app-download-images-doctor {
+    width: 250px;
+  }
+  .app-download-images-iconmess {
+    bottom: 55px;
+    right: 220px;
+    width: 100px;
+    height: 100px;
+  }
+  .app-download-images-iconphone {
+    right: -40%;
+    width: 100px;
+    height: 100px;
+  }
+  .app-download-links button img {
+    width: 150px;
+    height: 120px;
+    border-radius: 20px;
+  }
+}
+@media (min-width: 768px) and (max-width: 991px) {
+  //banner
+  .banner {
+    height: 500px;
+  }
+  .slider-image img {
+    width: 550px;
+  }
+  .banner-main {
+    height: 500px;
+  }
+  .content {
+    width: 350px;
+    top: 40%;
+    padding: 40px 20px 35px 0;
+  }
+  .title {
+    font-size: 22px;
+  }
+
+  .heart-icon {
+    width: 65px;
+    left: -25px;
+  }
+  .clinic-icon {
+    right: -40px;
+    width: 85px;
+  }
+
+  //section clinic
+  .clinic {
+    padding-top: 170px;
+    margin-bottom: 25px;
+  }
+  .clinic-title {
+    font-size: 22px;
+    line-height: 30px;
+    padding-bottom: 20px;
+  }
+  .clinic-content {
+    width: 100%;
+    height: 290px;
+  }
+  .clinic-image {
+    width: 320px;
+    height: 250px;
+  }
+
+  //health-care
+  .health-care-item {
+    width: 325px !important;
+    img {
+      width: 325px;
+    }
+  }
+
+  //doctor come
+  .doctor-come {
+    height: 290px;
+  }
+  .doctor-come-content-title {
+    font-size: 22px;
+    line-height: 30px;
+  }
+  .doctor-come-image img {
+    width: 52vw;
+  }
+  .doctor-come-video-player {
+    width: 50vw;
+  }
+  // pharmacy
+  .pharmacy-content {
+    top: 14vw;
+  }
+  .pharmacy-content-info {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .pharmacy-content-title {
+    font-size: 22px;
+    line-height: 30px;
+  }
+
+  //feeling
+  .feeling {
+    height: 70vw;
+  }
+  .feeling-content {
+    width: 50vw;
+    top: 15vw;
+  }
+  .feeling-content-info {
+    flex-direction: column;
+  }
+  .feeling-content-row:first-child {
+    margin-right: 0;
+    margin-bottom: 10px;
+  }
+  .feeling-content-desc {
+    font-size: 16px;
+  }
+  .feeling-content-title {
+    font-size: 22px;
+    line-height: 30px;
+  }
+  .feeling-image {
+    top: 60px;
+  }
+  .feeling-image img {
+    height: 48vw;
+  }
+  // video-chat
+
+  .video-chat-content {
+    width: 40vw;
+  }
+  .video-chat-content-desc {
+    font-size: 16px;
+  }
+  .video-chat-content-info {
+    flex-direction: column;
+  }
+  .video-chat-content-row:first-child {
+    margin-bottom: 5px;
+  }
+
+  .video-chat-content-title {
+    font-size: 22px;
+    line-height: 30px;
+  }
+  .video-chat-image img {
+    width: 75vw;
+    object-fit: cover;
+  }
+
+  //health resources
+  .health-resources {
+    height: 75vw;
+  }
+  .health-resources-content-title {
+    font-size: 22px;
+    line-height: 30px;
+  }
+  .health-resources-content-desc {
+    font-size: 16px;
+  }
+  .health-resources-content {
+    width: 80vw;
+  }
+  .health-resources-list {
+    top: 35vw;
+    right: unset;
+    left: auto;
+    transform: translateX(0);
+    width: max-content;
+  }
+  .health-resources-item {
+    width: 200px;
+  }
+  .health-resources-item-info h4 {
+    font-size: 14px;
+  }
+  .health-resources-items:nth-child(3) {
+    margin-left: 0;
+  }
+  .health-resources-image {
+    top: 70%;
+    transform: translateY(-50%);
+    img {
+      height: 50vw;
+    }
+  }
+  // news
+  .news {
+    height: 65vw;
+  }
+  .news-content {
+    width: 70vw;
+    top: 5vw;
+    right: unset;
+    left: auto;
+  }
+  .news-content-title {
+    font-size: 22px;
+    line-height: 30px;
+  }
+  .news-list {
+    top: 28vw;
+    left: auto;
+    z-index: 999;
+  }
+  .news-item-btn {
+    padding: 0 10px;
+  }
+  .news-item-btn img {
+    width: 120px;
+    object-fit: cover;
+  }
+
+  //App download
+  .app-download {
+    background-size: 100%;
+    height: 244px;
+  }
+
+  .app-download-main {
+    margin-top: 30px !important;
+  }
+  .app-download-content {
+    padding-top: 46px;
+    padding-left: 40px;
+  }
+  .app-download-content-title {
+    font-size: 22px;
+  }
+  .app-download-images {
+    bottom: -15px;
+    right: 15%;
+  }
+  .app-download-images-doctor {
+    width: 190px;
+  }
+  .app-download-images-iconmess {
+    bottom: 36px;
+    right: 162px;
+    width: 80px;
+    height: 80px;
+  }
+  .app-download-images-iconphone {
+    right: -40%;
+    width: 80px;
+    height: 80px;
+  }
+  .app-download-links button {
+    height: auto;
+  }
+  .app-download-links button img {
+    width: 100px;
+    height: 80px;
+    border-radius: 20px;
+  }
+}
+@media (max-width: 767px) {
+  //banner
+  .banner {
+    height: 350px;
+  }
+  .banner-slider {
+    position: unset;
+  }
+  .slider-image {
+    margin-right: 0;
+  }
+  .slider-image img {
+    width: 100%;
+  }
+  .banner-main {
+    height: 350px;
+  }
+  .btn-banner {
+    font-size: 14px;
+  }
+  .content {
+    width: 330px;
+    top: 40%;
+    padding: 15px 10px 20px 0;
+  }
+  .title {
+    font-size: 18px;
+    line-height: 38px;
+    margin-bottom: 15px;
+  }
+
+  .heart-icon {
+    width: 50px;
+    left: -30px;
+    top: -25px;
+  }
+  .clinic-icon {
+    right: -25px;
+    top: 55px;
+
+    width: 50px;
+  }
+
+  //section clinic
+  .clinic {
+    padding-top: 170px;
+    margin-bottom: 25px;
+    margin-top: 0;
+    padding-top: 0;
+    padding-bottom: 60px;
+  }
+  .clinic-title {
+    font-size: 22px;
+    line-height: 30px;
+    padding-bottom: 8px;
+    margin-bottom: 15px;
+  }
+  .clinic-content {
+    width: 100%;
+    height: max-content;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .clinic-image {
+    width: 100%;
+    height: 100%;
+    img {
+      height: 250px;
+      border-radius: 20px;
+    }
+  }
+  .clinic-info {
+    padding-top: 15px;
+    margin-left: 25px;
+    margin-bottom: 10px;
+  }
+  .clinic-name {
+    font-size: 16px;
+  }
+  .clinic-address {
+    font-size: 14px;
+    margin-bottom: 7px;
+  }
+
+  //health-care
+  .health-care-item {
+    width: 250px !important;
+    height: 310px;
+    img {
+      right: 0;
+      left: unset;
+      width: 200px;
+    }
+    h2 {
+      font-size: 22px;
+    }
+  }
+
+  //doctor come
+  .doctor-come {
+    height: 290px;
+  }
+  .doctor-come-content-title {
+    font-size: 22px;
+    line-height: 30px;
+  }
+  .doctor-come-image img {
+    width: 52vw;
+  }
+  .doctor-come-video-player {
+    width: 50vw;
+  }
+  // pharmacy
+  .pharmacy-content {
+    top: 14vw;
+  }
+  .pharmacy-content-info {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .pharmacy-content-title {
+    font-size: 22px;
+    line-height: 30px;
+  }
+
+  //feeling
+  .feeling {
+    height: 70vw;
+  }
+  .feeling-content {
+    width: 50vw;
+    top: 15vw;
+  }
+  .feeling-content-info {
+    flex-direction: column;
+  }
+  .feeling-content-row:first-child {
+    margin-right: 0;
+    margin-bottom: 10px;
+  }
+  .feeling-content-desc {
+    font-size: 16px;
+  }
+  .feeling-content-title {
+    font-size: 22px;
+    line-height: 30px;
+  }
+  .feeling-image {
+    top: 60px;
+  }
+  .feeling-image img {
+    height: 48vw;
+  }
+  // video-chat
+
+  .video-chat-content {
+    width: 40vw;
+  }
+  .video-chat-content-desc {
+    font-size: 16px;
+  }
+  .video-chat-content-info {
+    flex-direction: column;
+  }
+  .video-chat-content-row:first-child {
+    margin-bottom: 5px;
+  }
+
+  .video-chat-content-title {
+    font-size: 22px;
+    line-height: 30px;
+  }
+  .video-chat-image img {
+    width: 75vw;
+    object-fit: cover;
+  }
+
+  //health resources
+  .health-resources {
+    height: 75vw;
+  }
+  .health-resources-content-title {
+    font-size: 22px;
+    line-height: 30px;
+  }
+  .health-resources-content-desc {
+    font-size: 16px;
+  }
+  .health-resources-content {
+    width: 80vw;
+  }
+  .health-resources-list {
+    top: 35vw;
+    right: unset;
+    left: auto;
+    transform: translateX(0);
+    width: max-content;
+  }
+  .health-resources-item {
+    width: 200px;
+  }
+  .health-resources-item-info h4 {
+    font-size: 14px;
+  }
+  .health-resources-items:nth-child(3) {
+    margin-left: 0;
+  }
+  .health-resources-image {
+    top: 70%;
+    transform: translateY(-50%);
+    img {
+      height: 50vw;
+    }
+  }
+  // news
+  .news {
+    height: 65vw;
+  }
+  .news-content {
+    width: 70vw;
+    top: 5vw;
+    right: unset;
+    left: auto;
+  }
+  .news-content-title {
+    font-size: 22px;
+    line-height: 30px;
+  }
+  .news-list {
+    top: 28vw;
+    left: auto;
+    z-index: 999;
+  }
+  .news-item-btn {
+    padding: 0 10px;
+  }
+  .news-item-btn img {
+    width: 120px;
+    object-fit: cover;
+  }
+
+  //App download
+  .app-download {
+    background-size: 100%;
+    height: 244px;
+  }
+
+  .app-download-main {
+    margin-top: 30px !important;
+  }
+  .app-download-content {
+    padding-top: 46px;
+    padding-left: 40px;
+  }
+  .app-download-content-title {
+    font-size: 22px;
+  }
+  .app-download-images {
+    bottom: -15px;
+    right: 15%;
+  }
+  .app-download-images-doctor {
+    width: 190px;
+  }
+  .app-download-images-iconmess {
+    bottom: 36px;
+    right: 162px;
+    width: 80px;
+    height: 80px;
+  }
+  .app-download-images-iconphone {
+    right: -40%;
+    width: 80px;
+    height: 80px;
+  }
+  .app-download-links button {
+    height: auto;
+  }
+  .app-download-links button img {
+    width: 100px;
+    height: 80px;
+    border-radius: 20px;
+  }
+}

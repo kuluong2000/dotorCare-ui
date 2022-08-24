@@ -85,6 +85,7 @@ export default function Header() {
     nav.classList.add(`${cx("active")}`);
     navItem.classList.add(`${cx("active")}`);
     toggleMenu.classList.add(`${cx("close")}`);
+    document.body.style = `overflow: hidden;`;
   };
   const handleCloseMenu = () => {
     const nav = document.querySelector(`.${cx("header-nav")} `);
@@ -93,12 +94,15 @@ export default function Header() {
     nav.classList.remove(`${cx("active")}`);
     navItem.classList.remove(`${cx("active")}`);
     toggleMenu.classList.remove(`${cx("close")}`);
+    document.body.style = `overflow: overlay;`;
   };
   window.addEventListener("scroll", () => {
     const header = document.querySelector(`.${cx("header")}`);
     console.log(window.scrollY);
     if (window.scrollY > 68) {
       header.classList.add(`${cx("sticky")}`);
+    } else {
+      header.classList.remove(`${cx("sticky")}`);
     }
   });
   return (

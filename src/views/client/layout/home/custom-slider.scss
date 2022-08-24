@@ -39,3 +39,19 @@
 .jio-slick .slick-arrow:not(.slick-disabled):hover:before {
   color: #4a4a4a;
 }
+
+@media (min-width: 1200px) and (max-width: 1399px) {
+  .jio-slick .slick-next {
+    left: 850px;
+  }
+}
+@media (min-width: 992px) and (max-width: 1199px) {
+  .jio-slick .slick-next {
+    left: 750px;
+  }
+}
+@media (min-width: 768px) and (max-width: 991px) {
+  .jio-slick .slick-next {
+    left: 550px;
+  }
+}

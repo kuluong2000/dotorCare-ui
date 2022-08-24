@@ -20,6 +20,18 @@ export default function Home() {
     variableWidth: true,
     swipeToSlide: true,
     className: "jio-slick",
+    responsive: [
+      {
+        breakpoint: 767,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+          variableWidth: false,
+          swipeToSlide: false,
+          arrows: false,
+        },
+      },
+    ],
   };
   const healthCare = {
     dots: false,
@@ -27,6 +39,24 @@ export default function Home() {
     slidesToShow: 4,
     slidesToScroll: 1,
     className: "health-care-slick",
+    responsive: [
+      {
+        breakpoint: 1199,
+        settings: {
+          slidesToShow: 3,
+          slidesToScroll: 1,
+          infinite: true,
+        },
+      },
+      {
+        breakpoint: 991,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 1,
+          infinite: true,
+        },
+      },
+    ],
   };
   return (
     <main>
