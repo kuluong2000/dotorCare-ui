@@ -1341,7 +1341,7 @@
 @media (max-width: 767px) {
   //banner
   .banner {
-    height: 350px;
+    height: 260px;
   }
   .banner-slider {
     position: unset;
@@ -1351,16 +1351,18 @@
   }
   .slider-image img {
     width: 100%;
+    height: 260px;
   }
   .banner-main {
-    height: 350px;
+    height: 260px;
   }
   .btn-banner {
     font-size: 14px;
+    padding: 5px 5px;
   }
   .content {
     width: 330px;
-    top: 40%;
+    top: 55%;
     padding: 15px 10px 20px 0;
   }
   .title {
@@ -1390,7 +1392,7 @@
     padding-bottom: 60px;
   }
   .clinic-title {
-    font-size: 22px;
+    font-size: 20px;
     line-height: 30px;
     padding-bottom: 8px;
     margin-bottom: 15px;
@@ -1438,38 +1440,73 @@
 
   //doctor come
   .doctor-come {
-    height: 290px;
+    height: 230px;
   }
   .doctor-come-content-title {
-    font-size: 22px;
+    font-size: 20px;
     line-height: 30px;
+    margin-bottom: 15px;
+    padding-bottom: 15px;
+  }
+  .doctor-come-content-desc {
+    font-size: 16px;
+    margin: 10px 0 10px 0;
+  }
+  .doctor-come-content-action button {
+    font-size: 14px;
+    padding: 10px;
+  }
+  .doctor-come-content-action button:first-child {
+    margin-right: 10px;
   }
   .doctor-come-image img {
-    width: 52vw;
+    width: 47vw;
   }
   .doctor-come-video-player {
-    width: 50vw;
+    width: 45vw;
   }
   // pharmacy
+  .pharmacy {
+    height: 300px;
+  }
   .pharmacy-content {
-    top: 14vw;
+    top: 20%;
+    width: 280px;
+    right: 0;
   }
   .pharmacy-content-info {
     flex-direction: column;
     align-items: flex-start;
   }
-  .pharmacy-content-title {
-    font-size: 22px;
-    line-height: 30px;
+  .pharmacy-content-row img {
+    width: 25px;
+    height: 25px;
   }
-
+  .pharmacy-content-title {
+    font-size: 20px;
+    line-height: 30px;
+    margin-bottom: 15px;
+    padding-bottom: 15px;
+  }
+  .pharmacy-content-desc {
+    font-size: 14px;
+    margin: 10px 0 10px 0;
+  }
+  .pharmacy-content-shop-now {
+    margin: 15px -15px 0;
+    width: 100%;
+  }
   //feeling
   .feeling {
-    height: 70vw;
+    height: 450px;
   }
   .feeling-content {
-    width: 50vw;
-    top: 15vw;
+    width: 310px;
+    top: 20%;
+  }
+  .feeling-content-row img {
+    width: 25px;
+    height: 25px;
   }
   .feeling-content-info {
     flex-direction: column;
@@ -1482,22 +1519,37 @@
     font-size: 16px;
   }
   .feeling-content-title {
-    font-size: 22px;
+    font-size: 20px;
     line-height: 30px;
+    padding-bottom: 15px;
+    margin-bottom: 15px;
   }
   .feeling-image {
     top: 60px;
   }
   .feeling-image img {
-    height: 48vw;
+    height: 45vw;
   }
+  .feeling-btn-more {
+    margin-top: 15px;
+    button {
+      font-size: 14px;
+      padding: 10px;
+    }
+  }
+
   // video-chat
 
+  .video-chat-section {
+    height: 350px;
+  }
   .video-chat-content {
-    width: 40vw;
+    width: 300px;
+    right: 0;
   }
   .video-chat-content-desc {
     font-size: 16px;
+    margin: 10px 0 10px 0;
   }
   .video-chat-content-info {
     flex-direction: column;
@@ -1507,40 +1559,63 @@
   }
 
   .video-chat-content-title {
-    font-size: 22px;
+    font-size: 20px;
     line-height: 30px;
+    margin-bottom: 15px;
+    padding-bottom: 15px;
   }
   .video-chat-image img {
     width: 75vw;
     object-fit: cover;
   }
+  .video-chat-content-row img {
+    width: 25px;
+    height: 25px;
+  }
 
   //health resources
   .health-resources {
-    height: 75vw;
+    height: 470px;
+    padding-top: 45px;
   }
   .health-resources-content-title {
-    font-size: 22px;
+    font-size: 20px;
     line-height: 30px;
+    padding-bottom: 15px;
+    bottom: 15px;
   }
   .health-resources-content-desc {
     font-size: 16px;
+    margin: 10px 0 10px 0;
   }
   .health-resources-content {
     width: 80vw;
+    position: unset;
   }
   .health-resources-list {
-    top: 35vw;
-    right: unset;
-    left: auto;
-    transform: translateX(0);
-    width: max-content;
+    position: unset;
+    width: 100%;
+    margin-top: 15px;
   }
   .health-resources-item {
-    width: 200px;
+    width: 180px;
+    padding: 8px;
+    height: 65px;
+    &:hover {
+      transform: scale(1.2);
+    }
+  }
+  .health-resources-item img {
+    width: 25px;
+    height: 25px;
+  }
+  .health-resources-item:not(:last-child) {
+    margin-right: 20px;
   }
   .health-resources-item-info h4 {
     font-size: 14px;
+    font-size: 600;
+    margin-bottom: 5px;
   }
   .health-resources-items:nth-child(3) {
     margin-left: 0;
@@ -1554,64 +1629,77 @@
   }
   // news
   .news {
-    height: 65vw;
+    height: 400px;
+    padding-top: 30px;
+  }
+  .news-main {
+    flex-direction: column-reverse;
+    align-items: stretch;
+  }
+  .news-main-image {
+    z-index: -1;
   }
   .news-content {
-    width: 70vw;
-    top: 5vw;
-    right: unset;
-    left: auto;
+    position: unset;
+    width: 100%;
+  }
+  .news-content-desc {
+    font-size: 16px;
+    margin: 10px 0 10px 0;
   }
   .news-content-title {
-    font-size: 22px;
+    font-size: 20px;
     line-height: 30px;
+    padding-bottom: 15px;
+    margin-bottom: 15px;
   }
   .news-list {
-    top: 28vw;
-    left: auto;
-    z-index: 999;
+    position: unset;
   }
   .news-item-btn {
     padding: 0 10px;
+    height: 50px;
   }
   .news-item-btn img {
-    width: 120px;
+    width: 100px;
     object-fit: cover;
   }
 
   //App download
   .app-download {
-    background-size: 100%;
-    height: 244px;
+    background-size: cover;
+    height: 225px;
   }
 
   .app-download-main {
     margin-top: 30px !important;
   }
   .app-download-content {
-    padding-top: 46px;
+    padding-top: 40px;
     padding-left: 40px;
   }
   .app-download-content-title {
-    font-size: 22px;
+    font-size: 20px;
+    margin-bottom: 15px;
   }
   .app-download-images {
-    bottom: -15px;
-    right: 15%;
+    bottom: -20px;
+    right: -5%;
+    transform: translateX(-50%);
   }
   .app-download-images-doctor {
-    width: 190px;
+    width: 150px;
   }
   .app-download-images-iconmess {
-    bottom: 36px;
-    right: 162px;
-    width: 80px;
-    height: 80px;
+    bottom: 35px;
+    right: 135px;
+    width: 50px;
+    height: 50px;
   }
   .app-download-images-iconphone {
-    right: -40%;
-    width: 80px;
-    height: 80px;
+    right: -30%;
+    width: 50px;
+    height: 50px;
   }
   .app-download-links button {
     height: auto;
@@ -1620,5 +1708,363 @@
     width: 100px;
     height: 80px;
     border-radius: 20px;
+  }
+}
+@media (max-width: 575px) {
+  //banner
+
+  .btn-banner {
+    font-size: 14px;
+  }
+  .btn-booking {
+    padding: 8px;
+    &:first-child {
+      margin-right: 15px;
+    }
+  }
+  .content {
+    width: 260px;
+    top: 60%;
+    transform: translateY(-50%);
+    padding: 15px 10px 20px 0;
+  }
+  .title {
+    font-size: 16px;
+    line-height: 30px;
+    margin-bottom: 15px;
+  }
+
+  .heart-icon {
+    width: 40px;
+    height: 40px;
+    left: -5px;
+    top: -20px;
+  }
+  .clinic-icon {
+    right: -20px;
+    top: 40px;
+
+    width: 40px;
+    height: 40px;
+  }
+
+  //section clinic
+  .clinic {
+    margin-top: 30px;
+  }
+  .clinic-title {
+    font-size: 16px;
+    padding-bottom: 3px;
+    margin-bottom: 7px;
+  }
+
+  .clinic-image {
+    width: 100%;
+    height: 100%;
+    img {
+      height: 200px;
+      border-radius: 10px;
+    }
+  }
+  .clinic-info {
+    padding-top: 10px;
+    margin-left: 20px;
+    margin-bottom: 10px;
+  }
+
+  .clinic-address,
+  .clinic-time {
+    font-size: 14px;
+    margin-bottom: 7px;
+  }
+  .clinic-action button {
+    font-size: 14px;
+    padding: 7px 15px;
+  }
+
+  //doctor come
+  .doctor-come {
+    height: 100vw;
+  }
+  .doctor-come-content {
+    top: 77vw;
+  }
+  .doctor-come-content-title {
+    font-size: 18px;
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+  }
+  .doctor-come-content-title::after {
+    height: 5px;
+  }
+  .doctor-come-content-desc {
+    font-size: 14px;
+  }
+  .doctor-come-content-action button {
+    font-size: 14px;
+    padding: 10px;
+  }
+  .doctor-come-content-action button:first-child {
+    margin-right: 10px;
+  }
+  .doctor-come-video {
+    top: 1px;
+    z-index: -2;
+    &-player {
+      width: 80vw;
+    }
+  }
+  .doctor-come-image {
+    z-index: -1;
+    img {
+      width: 81vw;
+    }
+  }
+  // pharmacy
+  .pharmacy {
+    height: 650px;
+    overflow: hidden;
+  }
+  .pharmacy-content {
+    top: 70vw;
+    width: 85vw;
+    right: unset;
+    left: auto;
+  }
+  .pharmacy-content-row:first-child {
+    margin-bottom: 10px;
+  }
+  .pharmacy-content-row img {
+    width: 20px;
+    height: 20px;
+  }
+  .pharmacy-content-title {
+    font-size: 18px;
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+    &::after {
+      height: 5px;
+    }
+  }
+  .pharmacy-content-shop-now {
+    margin-left: 0;
+  }
+  .pharmacy-image img {
+    width: 145vw;
+  }
+  .pharmacy-video {
+    top: 15vw;
+  }
+  .pharmacy-video-player {
+    width: 85vw;
+  }
+  //feeling
+  .feeling {
+    height: 535px;
+  }
+  .feeling-content {
+    width: 85vw;
+    top: 50vw;
+  }
+  .feeling-content-row img {
+    width: 20px;
+    height: 20px;
+  }
+  .feeling-content-info {
+    flex-direction: column;
+  }
+  .feeling-content-row:first-child {
+    margin-right: 0;
+    margin-bottom: 10px;
+  }
+  .feeling-content-desc {
+    font-size: 14px;
+  }
+  .feeling-content-title {
+    font-size: 18px;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+    &::after {
+      height: 5px;
+    }
+  }
+  .feeling-image {
+    top: -25vw;
+  }
+  .feeling-image img {
+    height: 80vw;
+  }
+  .feeling-btn-more {
+    margin-top: 15px;
+    button {
+      font-size: 14px;
+      padding: 10px;
+    }
+  }
+
+  // video-chat
+
+  .video-chat-section {
+    height: 485px;
+    margin-top: 50px;
+  }
+  .video-chat-content {
+    top: 55vw;
+    width: 85vw;
+    right: unset;
+    left: auto;
+  }
+  .video-chat-content-desc {
+    font-size: 14px;
+  }
+
+  .video-chat-content-title {
+    font-size: 18px;
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+    &::after {
+      height: 5px;
+    }
+  }
+  .video-chat-image img {
+    width: 85vw;
+    object-fit: cover;
+  }
+  .video-chat-content-row img {
+    width: 25px;
+    height: 25px;
+  }
+
+  //health resources
+  .health-resources {
+    height: max-content;
+    padding-top: 45px;
+  }
+  .health-resources-content-title {
+    font-size: 20px;
+    line-height: 30px;
+    padding-bottom: 15px;
+    bottom: 15px;
+  }
+  .health-resources-content-desc {
+    font-size: 16px;
+    margin: 10px 0 10px 0;
+  }
+  .health-resources-content {
+    width: 80vw;
+    position: unset;
+  }
+  .health-resources-list {
+    position: unset;
+    width: 100%;
+    margin-top: 15px;
+  }
+  .health-resources-item {
+    width: 180px;
+    padding: 8px;
+    height: 65px;
+    margin-bottom: 10px;
+    &:hover {
+      transform: scale(1.2);
+    }
+  }
+  .health-resources-item img {
+    width: 25px;
+    height: 25px;
+  }
+  .health-resources-item:not(:last-child) {
+    margin-right: 20px;
+  }
+  .health-resources-item-info h4 {
+    font-size: 14px;
+    font-size: 600;
+    margin-bottom: 5px;
+  }
+  .health-resources-items {
+    flex-wrap: wrap;
+    margin-bottom: 10px !important;
+    margin-top: 0 !important;
+    margin-left: 0 !important;
+  }
+  .health-resources-items:nth-child(3) {
+    margin-left: 0;
+  }
+  .health-resources-image {
+    top: 70%;
+    transform: translateY(-50%);
+    img {
+      height: 50vw;
+    }
+  }
+  // news
+  .news {
+    height: max-content;
+    padding-top: 30px;
+  }
+  .news-main {
+    flex-direction: column-reverse;
+    align-items: stretch;
+  }
+  .news-main-image {
+    z-index: -1;
+  }
+  .news-content {
+    position: unset;
+    width: 100%;
+  }
+  .news-content-desc {
+    font-size: 16px;
+    margin: 10px 0 10px 0;
+  }
+  .news-content-title {
+    font-size: 20px;
+    line-height: 30px;
+    padding-bottom: 15px;
+    margin-bottom: 15px;
+  }
+  .news-list {
+    position: unset;
+  }
+  .news-item {
+    flex-wrap: wrap;
+  }
+  .news-item:nth-child(even) {
+    margin: 0;
+  }
+  .news-item-btn {
+    padding: 0 10px;
+    height: 50px;
+    margin-bottom: 10px;
+  }
+  .news-item-btn img {
+    width: 100px;
+    object-fit: cover;
+  }
+
+  //App download
+  .app-download {
+    background-size: cover;
+    height: 225px;
+  }
+
+  .app-download-main {
+    margin-top: 30px !important;
+  }
+  .app-download-content {
+    text-align: center;
+  }
+  .app-download-content-title {
+    font-size: 20px;
+    margin-bottom: 15px;
+    width: 100%;
+  }
+  .app-download-images-doctor {
+    display: none;
+  }
+  .app-download-images-iconmess {
+    display: none;
+  }
+  .app-download-images-iconphone {
+    display: none;
   }
 }

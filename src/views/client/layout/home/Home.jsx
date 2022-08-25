@@ -56,6 +56,14 @@ export default function Home() {
           infinite: true,
         },
       },
+      {
+        breakpoint: 445,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+          infinite: true,
+        },
+      },
     ],
   };
   return (
