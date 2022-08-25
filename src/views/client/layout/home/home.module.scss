@@ -1941,13 +1941,16 @@
     padding-top: 45px;
   }
   .health-resources-content-title {
-    font-size: 20px;
+    font-size: 18px;
     line-height: 30px;
-    padding-bottom: 15px;
-    bottom: 15px;
+    padding-bottom: 10px;
+    bottom: 10px;
+    &::after {
+      height: 5px;
+    }
   }
   .health-resources-content-desc {
-    font-size: 16px;
+    font-size: 14px;
     margin: 10px 0 10px 0;
   }
   .health-resources-content {
@@ -2013,14 +2016,16 @@
     width: 100%;
   }
   .news-content-desc {
-    font-size: 16px;
+    font-size: 14px;
     margin: 10px 0 10px 0;
   }
   .news-content-title {
-    font-size: 20px;
-    line-height: 30px;
-    padding-bottom: 15px;
-    margin-bottom: 15px;
+    font-size: 18px;
+    padding-bottom: 10px;
+    bottom: 10px;
+    &::after {
+      height: 5px;
+    }
   }
   .news-list {
     position: unset;
@@ -2079,5 +2084,8 @@
   }
   .video-chat-section {
     margin-top: 10px;
+  }
+  .health-resources {
+    padding-top: 0;
   }
 }
