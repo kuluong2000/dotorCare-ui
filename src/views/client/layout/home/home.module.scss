@@ -1426,7 +1426,7 @@
 
   //health-care
   .health-care-item {
-    width: 250px !important;
+    width: 45vw !important;
     height: 310px;
     img {
       right: 0;
@@ -1434,7 +1434,7 @@
       width: 200px;
     }
     h2 {
-      font-size: 22px;
+      font-size: 20px;
     }
   }
 
@@ -1676,7 +1676,7 @@
   }
   .app-download-content {
     padding-top: 40px;
-    padding-left: 40px;
+    padding-left: 0;
   }
   .app-download-content-title {
     font-size: 20px;
@@ -1864,7 +1864,7 @@
   }
   .feeling-content {
     width: 85vw;
-    top: 50vw;
+    top: 55vw;
   }
   .feeling-content-row img {
     width: 20px;
@@ -1982,7 +1982,7 @@
   }
   .health-resources-items {
     flex-wrap: wrap;
-    margin-bottom: 10px !important;
+    margin-bottom: 0 !important;
     margin-top: 0 !important;
     margin-left: 0 !important;
   }
@@ -2066,5 +2066,18 @@
   }
   .app-download-images-iconphone {
     display: none;
+  }
+}
+
+@media (max-width: 400px) {
+  .pharmacy {
+    height: 530px;
+  }
+  .health-care-item {
+    width: 60vw !important;
+    margin-right: 20px !important;
+  }
+  .video-chat-section {
+    margin-top: 10px;
   }
 }

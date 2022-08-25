@@ -57,11 +57,13 @@ export default function Home() {
         },
       },
       {
-        breakpoint: 445,
+        breakpoint: 400,
         settings: {
           slidesToShow: 1,
           slidesToScroll: 1,
           infinite: true,
+          variableWidth: true,
+          swipeToSlide: true,
         },
       },
     ],
