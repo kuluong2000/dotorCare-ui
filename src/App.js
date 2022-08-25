@@ -1,6 +1,8 @@
+import React from "react";
 import { Routes, Route } from "react-router-dom";
 import Footer from "./views/client/components/footer/Footer";
 import Header from "./views/client/components/header/Header";
+import Loading from "./views/client/common/loading/Loading";
 //import router
 import publicRoutes from "./views/client/routes/routes";
 
@@ -14,13 +16,15 @@ import "@fortawesome/react-fontawesome";
 function App() {
   return (
     <div className="App">
-      <Header></Header>
-      <Routes>
-        {publicRoutes.map((route, idx) => {
-          return <Route key={idx} path={route.path} element={<route.component />} />;
-        })}
-      </Routes>
-      <Footer></Footer>
+      <React.Suspense fallback={<Loading />}>
+        <Header></Header>
+        <Routes>
+          {publicRoutes.map((route, idx) => {
+            return <Route key={idx} path={route.path} element={<route.component />} />;
+          })}
+        </Routes>
+        <Footer></Footer>
+      </React.Suspense>
     </div>
   );
 }
