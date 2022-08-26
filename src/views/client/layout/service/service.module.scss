@@ -1,0 +1,138 @@
+.banner {
+  position: relative;
+  height: 600px;
+  margin-top: -70px;
+}
+.banner-image {
+  position: relative;
+  width: 100%;
+}
+.banner-image-1,
+.banner-image-2,
+.banner-image-3 {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+.banner-image-1 {
+  bottom: 0;
+  right: 0;
+  left: 0;
+  max-height: none;
+}
+.banner-image-2 {
+  right: 0;
+  top: 0;
+  z-index: 9;
+}
+.banner-image-3 {
+  bottom: 0;
+  right: 0;
+  left: 0;
+  max-height: none;
+  z-index: 10;
+}
+.content {
+  width: 550px;
+  position: absolute;
+  top: 15%;
+  padding-left: 120px;
+  z-index: 99;
+}
+.heading {
+  font-size: 42px;
+  color: var(--color-dark-blue);
+  font-weight: bold;
+}
+.description {
+  font-size: 16px;
+  margin-top: 20px;
+  font-weight: 500;
+}
+
+//find doctor
+
+.find-doctor {
+}
+.title {
+  position: relative;
+  font-size: 42px;
+  line-height: 1.1;
+  font-weight: bold;
+  color: var(--color-dark-blue);
+  padding-bottom: 26px;
+  margin-bottom: 30px;
+  &::after {
+    content: "";
+    position: absolute;
+    width: 50px;
+    height: 5px;
+    background-color: #3430d4;
+    left: 0;
+    bottom: 0;
+    border-radius: 10px;
+  }
+}
+.search-form {
+  display: flex;
+  width: 100%;
+}
+.form-group {
+  position: relative;
+  margin: 0 10px 16px 10px;
+
+  border: 1px solid #ced4da;
+  border-radius: 5px;
+  input {
+    padding: 5px 20px;
+    width: 100%;
+    height: 50px;
+    border-radius: 5px;
+    color: var(--text-color);
+    font-family: var(--primary-font);
+    font-weight: 500;
+    font-size: 16px;
+  }
+  input::placeholder {
+    color: #ced4da;
+  }
+}
+
+.form-group-name {
+  max-width: calc(36% - 20px);
+  flex: 0 0 36%;
+}
+.form-group-select {
+  max-width: calc(32% - 20px);
+  flex: 0 0 32%;
+}
+.form-group button {
+  position: absolute;
+  top: 0;
+  right: 0;
+  border-radius: 0;
+  background-color: transparent;
+  color: var(--color-green);
+  font-size: 17px;
+  height: 50px;
+}
+.jio-select {
+  border: none;
+  color: #c4c4c4;
+  height: 50px;
+  width: 100%;
+  padding: 0 35px 0 20px;
+  background: url("../../assets/images/service/arrowDown.svg") no-repeat right 15px center;
+  -webkit-appearance: none;
+  appearance: none;
+  border-radius: 5px;
+}
+.jio-select.active {
+  color: #202020;
+}
+.jio-select:focus {
+  background-color: #fff;
+  border-color: #80bdff;
+  outline: 0;
+  box-shadow: 0 0 0 0.2rem rgb(0 123 255 / 25%);
+}
