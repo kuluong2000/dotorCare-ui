@@ -98,7 +98,6 @@ export default function Header() {
   };
   window.addEventListener("scroll", () => {
     const header = document.querySelector(`.${cx("header")}`);
-    console.log(window.scrollY);
     if (window.scrollY > 68) {
       header.classList.add(`${cx("sticky")}`);
     } else {
