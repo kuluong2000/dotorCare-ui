@@ -295,6 +295,13 @@ export default function BookClinic() {
           </div>
         </div>
       </section>
+      <section className={cx("fixed-bottom-group")}>
+        <div className="container">
+          <div className="row">
+            <Button btn_green>Đặt lịch khám ngay</Button>
+          </div>
+        </div>
+      </section>
     </main>
   );
 }

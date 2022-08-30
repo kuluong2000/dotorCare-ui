@@ -262,6 +262,27 @@
     color: var(--color-dark-blue);
   }
 }
+
+//fixed bottom
+.fixed-bottom-group {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background: var(--color-white);
+  height: 70px;
+  display: flex;
+  align-items: center;
+  z-index: 999999;
+  display: none;
+  button {
+    display: block;
+    width: max-content;
+    margin: 0 auto;
+    color: var(--color-white);
+    padding: 10px 20px;
+  }
+}
+
 @media (min-width: 1200px) and (max-width: 1399px) {
   .banner {
     height: 620px;
@@ -461,8 +482,14 @@
   .exp-list {
     row-gap: 10px;
   }
+  .related-doctor-slider {
+    padding-bottom: 30px;
+  }
   .related-doctor-item {
     width: 95% !important;
+  }
+  .fixed-bottom-group {
+    display: flex;
   }
 }
 
