@@ -5,6 +5,11 @@ const Home = React.lazy(() => {
     setTimeout(() => resolve(import("../layout/home/Home")), 1000);
   });
 });
+const Clinic = React.lazy(() => {
+  return new Promise((resolve) => {
+    setTimeout(() => resolve(import("../layout/clinic/BookClinic")), 1000);
+  });
+});
 // const Home = React.lazy(() => import("../layout/home/Home"));
 
 const publicRoutes = [
@@ -15,6 +20,10 @@ const publicRoutes = [
   {
     path: "/dichvu",
     component: Service,
+  },
+  {
+    path: "/phongkham",
+    component: Clinic,
   },
 ];
 

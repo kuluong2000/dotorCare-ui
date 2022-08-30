@@ -5,7 +5,7 @@ import styles from "./button.module.scss";
 
 const cx = classNames.bind(styles);
 
-export default function Button({ to, href, btn_green, btn_blue, children, className, onClick, ...passProps }) {
+export default function Button({ to, href, btn_green, cursor_pointer, btn_blue, children, className, onClick, ...passProps }) {
   let Comp = "button";
   const props = {
     onClick,
@@ -25,6 +25,7 @@ export default function Button({ to, href, btn_green, btn_blue, children, classN
     [className]: className,
     btn_green,
     btn_blue,
+    cursor_pointer,
   });
   return (
     <Comp className={classes} {...props}>

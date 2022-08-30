@@ -187,7 +187,7 @@ export default function Service() {
                         </Button>
                       </div>
                       <div className={cx("doctor-info-inner")}>
-                        <Button to="/">Đặt phòng khám</Button>
+                        <Button to="/phongkham">Đặt phòng khám</Button>
                       </div>
                     </li>
                   ))}
