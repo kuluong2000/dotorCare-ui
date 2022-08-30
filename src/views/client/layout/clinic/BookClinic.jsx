@@ -29,6 +29,13 @@ export default function BookClinic() {
           slidesToScroll: 1,
         },
       },
+      {
+        breakpoint: 767,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+        },
+      },
     ],
     // variableWidth: true,
     // swipeToSlide: true,

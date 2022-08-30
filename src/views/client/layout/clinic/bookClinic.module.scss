@@ -371,11 +371,108 @@
       height: 70px;
     }
   }
+  .related-doctor-slider {
+    margin-bottom: 30px;
+  }
   .related-doctor-main-info {
     text-align: start;
     margin-left: 10px;
   }
   .related-doctor-more-btn {
     padding: 10px 20px;
+  }
+}
+
+@media (max-width: 767px) {
+  .banner {
+    height: 465px;
+    margin-top: 0;
+    padding: 0;
+  }
+  .banner-main {
+    padding: 0 15px;
+  }
+  .banner-bg {
+    position: relative;
+    height: 260px;
+  }
+
+  .banner-bg-bottom {
+    top: 220px;
+    height: 45px;
+  }
+  .avatar {
+    right: 50%;
+    transform: translateX(50%);
+    top: -15px;
+    height: max-content;
+    img {
+      width: 190px;
+      height: auto;
+    }
+  }
+  .info {
+    margin-top: 15px;
+    width: 100%;
+    button {
+      font-size: 14px;
+    }
+  }
+  .heading {
+    font-size: 24px;
+  }
+  .description {
+    font-size: 14px;
+    margin-bottom: 15px;
+  }
+  .title {
+    font-size: 22px;
+    margin-bottom: 15px;
+    padding-bottom: 15px;
+  }
+  .exp-blog {
+    padding: 0;
+  }
+  .exp-content {
+    h3 {
+      font-size: 18px;
+      margin: 15px 0 10px;
+    }
+    p {
+      font-size: 14px;
+    }
+  }
+  .exp-item {
+    padding: 20px;
+    &-icon {
+      display: none;
+    }
+    &-content {
+      border: none;
+      padding: 0;
+    }
+    &-title {
+      font-size: 16px;
+    }
+    &-info {
+      font-size: 14px;
+    }
+  }
+  .exp-list {
+    row-gap: 10px;
+  }
+  .related-doctor-item {
+    width: 95% !important;
+  }
+}
+
+@media (max-width: 420px) {
+  .banner {
+    height: 500px;
+  }
+}
+@media (max-width: 340px) {
+  .banner {
+    height: 510px;
   }
 }
