@@ -208,6 +208,9 @@
 }
 
 @media (max-width: 1199px) {
+  .wrapper {
+    width: 85%;
+  }
   .avatar {
     width: 100px;
     height: 100px;
@@ -219,7 +222,7 @@
     width: 40%;
   }
   .content {
-    height: 600px;
+    height: 80vh;
     overflow-x: hidden;
     &-info {
       flex-direction: column;
@@ -257,6 +260,9 @@
     flex-direction: column;
     padding: 10px 7px;
   }
+  .content {
+    height: 400px;
+  }
   .content-info {
     border: none;
     padding: 0;
@@ -286,4 +292,10 @@
   //   width: 105px;
   //   padding: 7px;
   // }
+}
+
+@media (max-height: 400px) {
+  .content {
+    height: 250px;
+  }
 }
