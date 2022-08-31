@@ -308,7 +308,9 @@ export default function BookClinic() {
       <section className={cx("fixed-bottom-group")}>
         <div className="container">
           <div className="row">
-            <Button btn_green>Đặt lịch khám ngay</Button>
+            <Button btn_green onClick={handleClickOpenModal}>
+              Đặt lịch khám ngay
+            </Button>
           </div>
         </div>
       </section>
