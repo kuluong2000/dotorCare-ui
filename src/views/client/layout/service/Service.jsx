@@ -160,10 +160,8 @@ export default function Service() {
                   </Button>
                 </div>
                 <div className={cx(["form-group", "form-group-select"])}>
-                  <select className={cx("jio-select")} onChange={handleOnChangeValue}>
-                    <option value="-2" selected>
-                      Tìm theo chuyên khoa
-                    </option>
+                  <select defaultValue={"DEFAULT"} className={cx("jio-select")} onChange={handleOnChangeValue}>
+                    <option value="DEFAULT">Tìm theo chuyên khoa</option>
                     <option value="1">Thuốc gây nghiện</option>
                     <option value="2">Dị Ứng Miễn Dịch</option>
                     <option value="3">Gây Mê</option>

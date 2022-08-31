@@ -1,8 +1,12 @@
 import React from "react";
-import Service from "../layout/service/Service";
 const Home = React.lazy(() => {
   return new Promise((resolve) => {
     setTimeout(() => resolve(import("../layout/home/Home")), 1000);
+  });
+});
+const Service = React.lazy(() => {
+  return new Promise((resolve) => {
+    setTimeout(() => resolve(import("../layout/service/Service")), 500);
   });
 });
 const Clinic = React.lazy(() => {
@@ -25,6 +29,10 @@ const publicRoutes = [
     path: "/phongkham",
     component: Clinic,
   },
+  // {
+  //   path: "/modal",
+  //   component: Modal,
+  // },
 ];
 
 export default publicRoutes;

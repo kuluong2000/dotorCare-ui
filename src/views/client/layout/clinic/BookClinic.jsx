@@ -1,12 +1,14 @@
-import React from "react";
+import React, { useState } from "react";
 import classNames from "classnames/bind";
 import Image from "../../common/image/Image";
 import Button from "../../common/button/Button";
+import Modal from "../../common/modal/Modal";
 import Slider from "react-slick";
 import styles from "./bookClinic.module.scss";
 import "./custom-slick.scss";
 const cx = classNames.bind(styles);
 export default function BookClinic() {
+  const [isVisible, setIsVisible] = useState(false);
   const relatedDocor = {
     infinite: false,
     dots: false,
@@ -59,8 +61,16 @@ export default function BookClinic() {
     // console.log(doctorInner);
     children[0].classList.add(`${cx("active")}`);
   };
+  const handleClickOpenModal = () => {
+    setIsVisible(true);
+    document.body.style = `overflow: hidden;`;
+  };
+  const handleCancelModal = () => {
+    setIsVisible(false);
+  };
   return (
     <main>
+      <Modal visible={isVisible} onCancel={handleCancelModal}></Modal>
       <section className={cx("banner")}>
         <div className={cx("banner-bg")}>
           <Image className={cx("banner-bg-1")} src={require("../../assets/images/clinic/dr-profile-banner-dt.svg").default}></Image>
@@ -74,7 +84,7 @@ export default function BookClinic() {
                 <p className={cx("description")}>
                   Bác sĩ Nguyễn Văn Sĩ chuyên điều trị các bệnh lý Tim mạch và có hơn 12 năm kinh nghiệm. Bác sĩ đã hoàn thành chương trình đào tạo Tiến sĩ tại Đại Học Yamanashi, Nhật Bản và hiện đang là Giảng viên tại Đại Học Y Dược TP.HCM.
                 </p>
-                <Button btn_green cursor_pointer>
+                <Button btn_green cursor_pointer onClick={handleClickOpenModal}>
                   Đặt lịch khám ngay
                 </Button>
               </div>
