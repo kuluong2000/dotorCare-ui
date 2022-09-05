@@ -7,6 +7,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faXmark } from "@fortawesome/free-solid-svg-icons";
 const cx = classNames.bind(styles);
 export default function Modal({ visible = false, onCancel, onSubmit }) {
+  console.log(visible);
   const classes = cx("modal", {
     visible,
   });

@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React, { useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import classNames from "classnames/bind";
 import styles from "./header.module.scss";
@@ -6,6 +6,7 @@ import styles from "./header.module.scss";
 //import Comp
 import Image from "../../common/image/Image";
 import Button from "../../common/button/Button";
+import Login from "../login/Login";
 //import image
 import Logo from "../../assets/images/logo.svg";
 import ViIcon from "../../assets/images/vi.png";
@@ -25,6 +26,7 @@ import { faAngleDown } from "@fortawesome/free-solid-svg-icons";
 const cx = classNames.bind(styles);
 
 export default function Header() {
+  const [isVisible, setIsVisile] = useState(false);
   const dropdownMenuRef = useRef();
   const Menu = [
     {
@@ -104,8 +106,31 @@ export default function Header() {
       header.classList.remove(`${cx("sticky")}`);
     }
   });
+
+  // LOGIN HANDLER
+
+  const hanldeOpenLogin = () => {
+    setIsVisile(true);
+    document.body.style = `overflow:hidden`;
+  };
+  const handleCloseLogin = () => {
+    setIsVisile(false);
+    document.body.style = `overflow:overlay`;
+  };
+  const elFormLogin = useRef();
+
+  const test = elFormLogin.current;
+  // console.log(test);
+  // document.addEventListener("click", (e) => {
+  //   console.log(e.target);
+  //   if (test && !test.contains(e.target)) {
+  //     setIsVisile(false);
+  //     document.body.style = `overflow:overlay`;
+  //   }
+  // });
   return (
     <header className={cx("header")}>
+      <Login ref={elFormLogin} visible={isVisible} onCancel={handleCloseLogin}></Login>
       <div className="container">
         <div className="row">
           <div className={cx("header-main")}>
@@ -155,10 +180,14 @@ export default function Header() {
               </div>
               <ul className={cx("app-list")}>
                 <li className={cx("app-item")}>
-                  <Button btn_blue>Đặt Hẹn Khám Ngay</Button>
+                  <Button to="/dichvu" btn_blue>
+                    Đặt Hẹn Khám Ngay
+                  </Button>
                 </li>
                 <li className={cx("app-item")}>
-                  <Button btn_green>Tải Ứng Dụng Ngay</Button>
+                  <Button btn_green onClick={hanldeOpenLogin}>
+                    Đăng nhập
+                  </Button>
                 </li>
               </ul>
             </nav>

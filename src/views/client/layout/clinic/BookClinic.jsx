@@ -67,6 +67,7 @@ export default function BookClinic() {
   };
   const handleCancelModal = () => {
     setIsVisible(false);
+    document.body.style = `overflow: overlay;`;
   };
   return (
     <main>

@@ -8,6 +8,8 @@
   display: flex;
   align-items: center;
 
+  z-index: 9999999999;
+
   &-main {
     display: flex;
     align-items: center;
@@ -135,7 +137,8 @@
 .app-item:first-child {
   margin-right: 10px;
 }
-
+.app-item {
+}
 // sub-menu
 .toggle-menu {
   display: flex;

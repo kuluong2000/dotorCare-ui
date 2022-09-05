@@ -14,7 +14,7 @@ const Clinic = React.lazy(() => {
     setTimeout(() => resolve(import("../layout/clinic/BookClinic")), 1000);
   });
 });
-// const Home = React.lazy(() => import("../layout/home/Home"));
+const Login = React.lazy(() => import("../components/login/Login"));
 
 const publicRoutes = [
   {
@@ -29,10 +29,10 @@ const publicRoutes = [
     path: "/phongkham",
     component: Clinic,
   },
-  // {
-  //   path: "/modal",
-  //   component: Modal,
-  // },
+  {
+    path: "/login",
+    component: Login,
+  },
 ];
 
 export default publicRoutes;
