@@ -176,7 +176,7 @@ export default function BookClinic() {
                 <Slider {...relatedDocor}>
                   <div className={cx("related-doctor-item")}>
                     <div className={cx("related-doctor-info")}>
-                      <Image src={require("../../assets/images/service/doctor1.png")} className={cx("related-doctor-info-avatar")}></Image>
+                      <Image src={require("../../assets/images/doctor/doctor1.png")} className={cx("related-doctor-info-avatar")}></Image>
                       <div className={cx("related-doctor-main-info")}>
                         <h3 className={cx("related-doctor-info-name")}>Ths.Bs.Nguyễn ngọc Bách </h3>
                         <p className={cx("related-doctor-info-specialty")}>Tai Mũi Họng</p>
@@ -194,7 +194,7 @@ export default function BookClinic() {
                   </div>
                   <div className={cx("related-doctor-item")}>
                     <div className={cx("related-doctor-info")}>
-                      <Image src={require("../../assets/images/service/doctor1.png")} className={cx("related-doctor-info-avatar")}></Image>
+                      <Image src={require("../../assets/images/doctor/doctor1.png")} className={cx("related-doctor-info-avatar")}></Image>
                       <div className={cx("related-doctor-main-info")}>
                         <h3 className={cx("related-doctor-info-name")}>Ths.Bs.Nguyễn ngọc Bách </h3>
                         <p className={cx("related-doctor-info-specialty")}>Tai Mũi Họng</p>
@@ -212,7 +212,7 @@ export default function BookClinic() {
                   </div>
                   <div className={cx("related-doctor-item")}>
                     <div className={cx("related-doctor-info")}>
-                      <Image src={require("../../assets/images/service/doctor1.png")} className={cx("related-doctor-info-avatar")}></Image>
+                      <Image src={require("../../assets/images/doctor/doctor1.png")} className={cx("related-doctor-info-avatar")}></Image>
                       <div className={cx("related-doctor-main-info")}>
                         <h3 className={cx("related-doctor-info-name")}>Ths.Bs.Nguyễn ngọc Bách </h3>
                         <p className={cx("related-doctor-info-specialty")}>Tai Mũi Họng</p>
@@ -230,7 +230,7 @@ export default function BookClinic() {
                   </div>
                   <div className={cx("related-doctor-item")}>
                     <div className={cx("related-doctor-info")}>
-                      <Image src={require("../../assets/images/service/doctor1.png")} className={cx("related-doctor-info-avatar")}></Image>
+                      <Image src={require("../../assets/images/doctor/doctor1.png")} className={cx("related-doctor-info-avatar")}></Image>
                       <div className={cx("related-doctor-main-info")}>
                         <h3 className={cx("related-doctor-info-name")}>Ths.Bs.Nguyễn ngọc Bách </h3>
                         <p className={cx("related-doctor-info-specialty")}>Tai Mũi Họng</p>
@@ -248,7 +248,7 @@ export default function BookClinic() {
                   </div>
                   <div className={cx("related-doctor-item")}>
                     <div className={cx("related-doctor-info")}>
-                      <Image src={require("../../assets/images/service/doctor1.png")} className={cx("related-doctor-info-avatar")}></Image>
+                      <Image src={require("../../assets/images/doctor/doctor1.png")} className={cx("related-doctor-info-avatar")}></Image>
                       <div className={cx("related-doctor-main-info")}>
                         <h3 className={cx("related-doctor-info-name")}>Ths.Bs.Nguyễn ngọc Bách </h3>
                         <p className={cx("related-doctor-info-specialty")}>Tai Mũi Họng</p>
@@ -266,7 +266,7 @@ export default function BookClinic() {
                   </div>
                   <div className={cx("related-doctor-item")}>
                     <div className={cx("related-doctor-info")}>
-                      <Image src={require("../../assets/images/service/doctor1.png")} className={cx("related-doctor-info-avatar")}></Image>
+                      <Image src={require("../../assets/images/doctor/doctor1.png")} className={cx("related-doctor-info-avatar")}></Image>
                       <div className={cx("related-doctor-main-info")}>
                         <h3 className={cx("related-doctor-info-name")}>Ths.Bs.Nguyễn ngọc Bách </h3>
                         <p className={cx("related-doctor-info-specialty")}>Tai Mũi Họng</p>
@@ -284,7 +284,7 @@ export default function BookClinic() {
                   </div>
                   <div className={cx("related-doctor-item")}>
                     <div className={cx("related-doctor-info")}>
-                      <Image src={require("../../assets/images/service/doctor1.png")} className={cx("related-doctor-info-avatar")}></Image>
+                      <Image src={require("../../assets/images/doctor/doctor1.png")} className={cx("related-doctor-info-avatar")}></Image>
                       <div className={cx("related-doctor-main-info")}>
                         <h3 className={cx("related-doctor-info-name")}>Ths.Bs.Nguyễn ngọc Bách </h3>
                         <p className={cx("related-doctor-info-specialty")}>Tai Mũi Họng</p>

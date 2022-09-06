@@ -3,6 +3,7 @@ import { Routes, Route } from "react-router-dom";
 import Footer from "./views/client/components/footer/Footer";
 import Header from "./views/client/components/header/Header";
 import Loading from "./views/client/common/loading/Loading";
+import AppItem from "./views/client/common/appItem/AppItem";
 //import router
 import publicRoutes from "./views/client/routes/routes";
 
@@ -18,11 +19,14 @@ function App() {
     <div className="App">
       <React.Suspense fallback={<Loading />}>
         <Header></Header>
-        <Routes>
-          {publicRoutes.map((route, idx) => {
-            return <Route key={idx} path={route.path} element={<route.component />} />;
-          })}
-        </Routes>
+        <main>
+          <Routes>
+            {publicRoutes.map((route, idx) => {
+              return <Route key={idx} path={route.path} element={<route.component />} />;
+            })}
+          </Routes>
+          <AppItem />
+        </main>
         <Footer></Footer>
       </React.Suspense>
     </div>

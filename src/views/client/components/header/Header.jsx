@@ -2,7 +2,6 @@ import React, { useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import classNames from "classnames/bind";
 import styles from "./header.module.scss";
-
 //import Comp
 import Image from "../../common/image/Image";
 import Button from "../../common/button/Button";
@@ -22,7 +21,6 @@ import blogIcon from "../../assets/images/blog-icon.svg";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faAngleDown } from "@fortawesome/free-solid-svg-icons";
-
 const cx = classNames.bind(styles);
 
 export default function Header() {
@@ -73,31 +71,53 @@ export default function Header() {
       icon: EnIcon,
     },
   ];
-
   const handleClickShowLanguage = (e) => {
     const dropdownMenu = dropdownMenuRef.current;
     dropdownMenu.classList.toggle(cx("open"));
   };
-
+  function handleShowHideMenu(option) {
+    const nav = document.querySelector(`.${cx("header-nav")} `);
+    const toggleMenu = document.querySelector(`.${cx("toggle-menu")} `);
+    const navItem = document.querySelector(`.${cx("header-items")}`);
+    const mask = document.querySelector(`.${cx("header-mask")}`);
+    if (option === "show") {
+      nav.classList.add(`${cx("active")}`);
+      navItem.classList.add(`${cx("active")}`);
+      toggleMenu.classList.add(`${cx("close")}`);
+      mask.classList.add(`${cx("active")}`);
+      document.body.style = `overflow: hidden;`;
+    }
+    if (option === "hide") {
+      nav.classList.remove(`${cx("active")}`);
+      navItem.classList.remove(`${cx("active")}`);
+      toggleMenu.classList.remove(`${cx("close")}`);
+      mask.classList.remove(`${cx("active")}`);
+      document.body.style = `overflow: overlay;`;
+    }
+  }
   //toggle menu
   const handleOpenMenu = () => {
-    const nav = document.querySelector(`.${cx("header-nav")} `);
-    const toggleMenu = document.querySelector(`.${cx("toggle-menu")} `);
-    const navItem = document.querySelector(`.${cx("header-items")}`);
-    nav.classList.add(`${cx("active")}`);
-    navItem.classList.add(`${cx("active")}`);
-    toggleMenu.classList.add(`${cx("close")}`);
-    document.body.style = `overflow: hidden;`;
+    handleShowHideMenu("show");
   };
   const handleCloseMenu = () => {
-    const nav = document.querySelector(`.${cx("header-nav")} `);
-    const toggleMenu = document.querySelector(`.${cx("toggle-menu")} `);
-    const navItem = document.querySelector(`.${cx("header-items")}`);
-    nav.classList.remove(`${cx("active")}`);
-    navItem.classList.remove(`${cx("active")}`);
-    toggleMenu.classList.remove(`${cx("close")}`);
-    document.body.style = `overflow: overlay;`;
+    handleShowHideMenu("hide");
   };
+  document.addEventListener("click", (e) => {
+    const mask = document.querySelector(`.${cx("header-mask")} `);
+    const items = document.querySelectorAll(`.${cx("header-item")} > a`);
+    const btnBooking = document.querySelector(`.${cx("app-item")} > a`);
+    const btnLogin = document.querySelector(`.${cx("app-item")} > button`);
+
+    if (mask.contains(e.target) || btnBooking.contains(e.target) || btnLogin.contains(e.target)) {
+      handleShowHideMenu("hide");
+    }
+    items.forEach((item) => {
+      if (item.contains(e.target)) {
+        handleShowHideMenu("hide");
+      }
+    });
+  });
+  // scroll header
   window.addEventListener("scroll", () => {
     const header = document.querySelector(`.${cx("header")}`);
     if (window.scrollY > 68) {
@@ -106,31 +126,18 @@ export default function Header() {
       header.classList.remove(`${cx("sticky")}`);
     }
   });
-
   // LOGIN HANDLER
 
-  const hanldeOpenLogin = () => {
+  const handleOpenLogin = () => {
     setIsVisile(true);
-    document.body.style = `overflow:hidden`;
   };
   const handleCloseLogin = () => {
     setIsVisile(false);
-    document.body.style = `overflow:overlay`;
   };
-  const elFormLogin = useRef();
 
-  const test = elFormLogin.current;
-  // console.log(test);
-  // document.addEventListener("click", (e) => {
-  //   console.log(e.target);
-  //   if (test && !test.contains(e.target)) {
-  //     setIsVisile(false);
-  //     document.body.style = `overflow:overlay`;
-  //   }
-  // });
   return (
     <header className={cx("header")}>
-      <Login ref={elFormLogin} visible={isVisible} onCancel={handleCloseLogin}></Login>
+      <Login visible={isVisible} onCancel={handleCloseLogin}></Login>
       <div className="container">
         <div className="row">
           <div className={cx("header-main")}>
@@ -145,6 +152,7 @@ export default function Header() {
                 <div className={cx("line3")}></div>
               </div>
             </div>
+            <div className={cx("header-mask")}></div>
             <nav className={cx("header-nav")}>
               <ul className={cx("header-items")}>
                 {Menu.map((item, idx) => (
@@ -185,7 +193,7 @@ export default function Header() {
                   </Button>
                 </li>
                 <li className={cx("app-item")}>
-                  <Button btn_green onClick={hanldeOpenLogin}>
+                  <Button btn_green onClick={handleOpenLogin}>
                     Đăng nhập
                   </Button>
                 </li>

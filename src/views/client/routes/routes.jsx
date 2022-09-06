@@ -4,9 +4,9 @@ const Home = React.lazy(() => {
     setTimeout(() => resolve(import("../layout/home/Home")), 1000);
   });
 });
-const Service = React.lazy(() => {
+const Doctor = React.lazy(() => {
   return new Promise((resolve) => {
-    setTimeout(() => resolve(import("../layout/service/Service")), 500);
+    setTimeout(() => resolve(import("../layout/doctors/Doctor")), 500);
   });
 });
 const Clinic = React.lazy(() => {
@@ -14,7 +14,11 @@ const Clinic = React.lazy(() => {
     setTimeout(() => resolve(import("../layout/clinic/BookClinic")), 1000);
   });
 });
-const Login = React.lazy(() => import("../components/login/Login"));
+const Service = React.lazy(() => {
+  return new Promise((resolve) => {
+    setTimeout(() => resolve(import("../layout/service/Service")), 1000);
+  });
+});
 
 const publicRoutes = [
   {
@@ -22,16 +26,16 @@ const publicRoutes = [
     component: Home,
   },
   {
-    path: "/dichvu",
-    component: Service,
+    path: "/bac-si",
+    component: Doctor,
   },
   {
     path: "/phongkham",
     component: Clinic,
   },
   {
-    path: "/login",
-    component: Login,
+    path: "/dich-vu",
+    component: Service,
   },
 ];
 

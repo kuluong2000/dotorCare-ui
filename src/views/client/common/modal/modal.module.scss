@@ -111,7 +111,7 @@
     padding: 10px 20px;
     border-radius: 5px;
     border: 1px solid #dadada;
-    background: url("../../assets/images/service/arrowDown.svg") no-repeat right 15px center;
+    background: url("../../assets/images/doctor/arrowDown.svg") no-repeat right 15px center;
     -webkit-appearance: none;
     appearance: none;
 
@@ -140,7 +140,7 @@
     padding: 7px 15px;
     border-radius: 5px;
     border: 1px solid #dadada;
-    background: url("../../assets/images/service/arrowDown.svg") no-repeat right 15px center;
+    background: url("../../assets/images/doctor/arrowDown.svg") no-repeat right 15px center;
     -webkit-appearance: none;
     appearance: none;
     background-color: var(--color-white);
@@ -170,6 +170,10 @@
     background-color: var(--color-white);
     color: #80bdff;
     padding: 10px;
+  }
+  button.active {
+    background-color: var(--color-dark-blue);
+    color: white;
   }
 }
 .address {

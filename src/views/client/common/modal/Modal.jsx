@@ -7,10 +7,21 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faXmark } from "@fortawesome/free-solid-svg-icons";
 const cx = classNames.bind(styles);
 export default function Modal({ visible = false, onCancel, onSubmit }) {
-  console.log(visible);
+  const listBtn = document.querySelectorAll(`.${cx("list-btn")} > button`);
+
+  listBtn.forEach((el) => {
+    el.addEventListener("click", (e) => {
+      listBtn.forEach((item) => item.classList.remove(`${cx("active")}`));
+      const className = e.target.className;
+      if (!className.includes(`${cx("active")}`)) {
+        e.target.classList.add(`${cx("active")}`);
+      }
+    });
+  });
   const classes = cx("modal", {
     visible,
   });
+
   return (
     <div className={classes}>
       <div className={cx("wrapper")}>
@@ -18,7 +29,7 @@ export default function Modal({ visible = false, onCancel, onSubmit }) {
         <h2 className={cx("heading")}>Đặt khám bệnh</h2>
         <div className={cx("main")}>
           <div className={cx("info")}>
-            <Image src={require("../../assets/images/service/doctor1.png")} className={cx("avatar")}></Image>
+            <Image src={require("../../assets/images/doctor/doctor1.png")} className={cx("avatar")}></Image>
             <h2 className={cx("name")}>TS.BS.Nguyễn Văn Sĩ</h2>
           </div>
           <div className={cx("content")}>
