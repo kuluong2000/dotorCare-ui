@@ -81,48 +81,56 @@ export default function Service() {
       name: "TS.BS.Nguyễn Văn Sĩ",
       specialty: "Tim Mạch",
       introdution: "Bác sĩ Nguyễn Văn Sĩ chuyên điều trị các bệnh lý Tim mạch và có hơn 12 năm kinh nghiệm",
+      to: "nguyen-van-si",
     },
     {
       avatar: avatar,
       name: "TS.BS.Nguyễn Văn Sĩ",
       specialty: "Tim Mạch",
       introdution: "Bác sĩ Nguyễn Văn Sĩ chuyên điều trị các bệnh lý Tim mạch và có hơn 12 năm kinh nghiệm",
+      to: "nguyen-van-si",
     },
     {
       avatar: avatar,
       name: "TS.BS.Nguyễn Văn Sĩ",
       specialty: "Tim Mạch",
       introdution: "Bác sĩ Nguyễn Văn Sĩ chuyên điều trị các bệnh lý Tim mạch và có hơn 12 năm kinh nghiệm",
+      to: "nguyen-van-si",
     },
     {
       avatar: avatar,
       name: "TS.BS.Nguyễn Văn Sĩ",
       specialty: "Tim Mạch",
       introdution: "Bác sĩ Nguyễn Văn Sĩ chuyên điều trị các bệnh lý Tim mạch và có hơn 12 năm kinh nghiệm",
+      to: "nguyen-van-si",
     },
     {
       avatar: avatar,
       name: "TS.BS.Nguyễn Văn Sĩ",
       specialty: "Tim Mạch",
       introdution: "Bác sĩ Nguyễn Văn Sĩ chuyên điều trị các bệnh lý Tim mạch và có hơn 12 năm kinh nghiệm",
+      to: "nguyen-van-si",
     },
     {
       avatar: avatar,
       name: "TS.BS.Nguyễn Văn Sĩ",
       specialty: "Tim Mạch",
       introdution: "Bác sĩ Nguyễn Văn Sĩ chuyên điều trị các bệnh lý Tim mạch và có hơn 12 năm kinh nghiệm",
+      to: "nguyen-van-si",
     },
     {
       avatar: avatar,
       name: "TS.BS.Nguyễn Văn Sĩ",
       specialty: "Tim Mạch",
       introdution: "Bác sĩ Nguyễn Văn Sĩ chuyên điều trị các bệnh lý Tim mạch và có hơn 12 năm kinh nghiệm",
+      to: "nguyen-van-si",
     },
     {
       avatar: avatar,
       name: "TS.BS.Nguyễn Văn Sĩ",
       specialty: "Tim Mạch",
       introdution: "Bác sĩ Nguyễn Văn Sĩ chuyên điều trị các bệnh lý Tim mạch và có hơn 12 năm kinh nghiệm",
+      to: "nguyen-van-si",
     },
   ];
   return (
@@ -185,7 +193,7 @@ export default function Service() {
                         </Button>
                       </div>
                       <div className={cx("doctor-info-inner")}>
-                        <Button to="/phongkham">Đặt phòng khám</Button>
+                        <Button to={`/bac-si/${el.to}`}>Đặt phòng khám</Button>
                       </div>
                     </li>
                   ))}

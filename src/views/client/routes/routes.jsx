@@ -35,7 +35,7 @@ const publicRoutes = [
     component: Doctor,
   },
   {
-    path: "/phongkham",
+    path: "/bac-si/:nickname",
     component: Clinic,
   },
   {

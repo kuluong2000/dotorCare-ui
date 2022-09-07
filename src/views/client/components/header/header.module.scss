@@ -8,6 +8,7 @@
   display: flex;
   align-items: center;
   z-index: 9999999999;
+  user-select: none;
   &-main {
     display: flex;
     align-items: center;
