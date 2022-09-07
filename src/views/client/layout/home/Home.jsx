@@ -107,7 +107,9 @@ export default function Home() {
                 <img className={cx("clinic-icon")} src={require("../../assets/images/clinic-icon.svg").default} alt="" />
                 <h1 className={cx("title")}>Chào mừng bạn đến với Tương lai của Chăm sóc Sức khỏe!</h1>
                 <div className={cx("action")}>
-                  <Button className={cx(["btn-booking", "btn-banner"])}>Đặt Hẹn Khám</Button>
+                  <Button to="/dich-vu" className={cx(["btn-booking", "btn-banner"])}>
+                    Đặt Hẹn Khám
+                  </Button>
                   <Button className={cx(["btn-banner", "btn-learn-more"])}>Tìm Hiểu Thêm</Button>
                 </div>
               </div>
@@ -136,7 +138,9 @@ export default function Home() {
                   </div>
                   <div className={cx("clinic-action")}>
                     <Button btn_blue>Gọi Ngay</Button>
-                    <Button btn_green>Đặt Khám</Button>
+                    <Button to="/dich-vu" btn_green>
+                      Đặt Khám
+                    </Button>
                   </div>
                 </div>
               </div>
@@ -149,7 +153,7 @@ export default function Home() {
           <div className="row">
             <div className="health-care-main">
               <Slider {...healthCare}>
-                <div to={"/dichvu"} className={cx("health-care-item")}>
+                <div to={"/bac-si"} className={cx("health-care-item")}>
                   <img src={require("../../assets/images/home-visit-bg.png")} alt="" />
                   <h2 className={cx("health-care-item-title")}>Dịch vụ Bác Sĩ đến nhà</h2>
                 </div>
@@ -157,15 +161,15 @@ export default function Home() {
                   <img src={require("../../assets/images/pharmacy-bg.png")} alt="" />
                   <h2 className={cx("health-care-item-title")}>Nhà thuốc trực tuyến</h2>
                 </Link>
-                <Link to={"/dichvu"} className={cx("health-care-item")}>
+                <Link to={"/bac-si"} className={cx("health-care-item")}>
                   <img src={require("../../assets/images/find-doctor-bg.png")} alt="" />
                   <h2 className={cx("health-care-item-title")}>Tìm bác sĩ</h2>
                 </Link>
-                <Link to={"/dichvu"} className={cx("health-care-item")}>
+                <Link to={"/dich-vu"} className={cx("health-care-item")}>
                   <img src={require("../../assets/images/care-packages-bg.png")} alt="" />
                   <h2 className={cx("health-care-item-title")}>Gói chăm sóc sức khỏe</h2>
                 </Link>
-                <Link to={"/dichvu"} className={cx("health-care-item")}>
+                <Link to={"/bac-si"} className={cx("health-care-item")}>
                   <img src={require("../../assets/images/home-visit-bg.png")} alt="" />
                   <h2 className={cx("health-care-item-title")}>Dịch Vụ Bác Sĩ Đến Nhà</h2>
                 </Link>

@@ -19,6 +19,11 @@ const Service = React.lazy(() => {
     setTimeout(() => resolve(import("../layout/service/Service")), 1000);
   });
 });
+const Details = React.lazy(() => {
+  return new Promise((resolve) => {
+    setTimeout(() => resolve(import("../layout/details/Details")), 700);
+  });
+});
 
 const publicRoutes = [
   {
@@ -36,6 +41,10 @@ const publicRoutes = [
   {
     path: "/dich-vu",
     component: Service,
+  },
+  {
+    path: "/dich-vu/:title",
+    component: Details,
   },
 ];
 

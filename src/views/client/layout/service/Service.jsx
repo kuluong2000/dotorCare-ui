@@ -21,18 +21,21 @@ export default function Service() {
       desc: "Giá tư vấn chỉ từ",
       price: "400.000",
       image: generalCare,
+      to: "kham-tong-quat",
     },
     {
       title: "Nhi khoa",
       desc: "Giá tư vấn chỉ từ",
       price: "500.000",
       image: pediatrics,
+      to: "nhi-khoa",
     },
     {
       title: "Chủng ngừa",
       desc: "Giá tư vấn chỉ từ",
       price: "400.000",
       image: vaccineConsultation,
+      to: "chung-ngua",
     },
 
     {
@@ -40,18 +43,21 @@ export default function Service() {
       desc: "Giá tư vấn chỉ từ",
       price: "500.000",
       image: maternity,
+      to: "san-phu-khoa",
     },
     {
       title: "Sức khỏe phụ nữ",
       desc: "Giá tư vấn chỉ từ",
       price: "500.000",
       image: gynecology,
+      to: "suc-khoe-phu-nu",
     },
     {
       title: "Nha khoa",
       desc: "Giá tư vấn chỉ từ",
       price: "400.000",
       image: dentistry,
+      to: "nha-khoa",
     },
   ];
 
@@ -98,7 +104,7 @@ export default function Service() {
                     <Button btn_green className={cx("service-item-more-btn")}>
                       Đặt tại phòng khám
                     </Button>
-                    <Button btn_outline className={cx("service-item-more-btn")}>
+                    <Button to={`/dich-vu/${item.to}`} btn_outline className={cx("service-item-more-btn")}>
                       Xem chi tiết
                     </Button>
                   </div>
