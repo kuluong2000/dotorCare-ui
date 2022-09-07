@@ -34,28 +34,28 @@ export default function Header() {
     },
     {
       name: "Các dịch Vụ",
-      to: "/dichvu",
+      to: "/dich-vu",
       icon: serviceIcon,
     },
 
     {
       name: "Nhà Thuốc Jio",
-      to: "/dichvu",
+      to: "/dich-vu",
       icon: pharmacyIcon,
     },
     {
       name: "Gói Chăm Sóc",
-      to: "/dichvu",
+      to: "/dich-vu",
       icon: healthPlanIcon,
     },
     {
       name: "Đội Ngũ Bác Sĩ",
-      to: "/dichvu",
+      to: "/bac-si",
       icon: doctorIcon,
     },
     {
       name: "Tin Tức",
-      to: "/dichvu",
+      to: "/tin-tuc",
       icon: blogIcon,
     },
   ];
