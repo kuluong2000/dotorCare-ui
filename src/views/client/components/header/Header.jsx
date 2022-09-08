@@ -141,9 +141,9 @@ export default function Header() {
       <div className="container">
         <div className="row">
           <div className={cx("header-main")}>
-            <div className={cx("header-logo")}>
+            <Link to="/" className={cx("header-logo")}>
               <Image src={Logo} alt="logo"></Image>
-            </div>
+            </Link>
             <div className={cx("toggle-menu")} onClick={handleOpenMenu}>
               <span className={cx("sub-title")}>Trang chủ</span>
               <div className={cx("sub-menu")}>

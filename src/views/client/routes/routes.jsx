@@ -24,6 +24,11 @@ const Details = React.lazy(() => {
     setTimeout(() => resolve(import("../layout/details/Details")), 700);
   });
 });
+const Order = React.lazy(() => {
+  return new Promise((resolve) => {
+    setTimeout(() => resolve(import("../layout/order/Order")), 700);
+  });
+});
 const ErrorPage = React.lazy(() => {
   return new Promise((resolve) => {
     setTimeout(() => resolve(import("../layout/errorPage/ErrorPage")), 300);
@@ -50,6 +55,10 @@ const publicRoutes = [
   {
     path: "/dich-vu/:title",
     component: Details,
+  },
+  {
+    path: "/dich-vu/dat-hen-kham",
+    component: Order,
   },
   {
     path: "*",

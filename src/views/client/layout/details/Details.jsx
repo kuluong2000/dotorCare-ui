@@ -29,7 +29,7 @@ export default function Details() {
                   <h2 className={cx("price")}>500.000đ</h2>
                 </div>
                 <div className={cx("price-outside")}>
-                  <Button btn_blue className={cx("price-outside-btn")}>
+                  <Button to={`/dich-vu/dat-hen-kham`} btn_blue className={cx("price-outside-btn")}>
                     Đặt hẹn khám
                   </Button>
                 </div>
