@@ -48,10 +48,12 @@ const Login = forwardRef(({ visible = false, onCancel }, ref) => {
                 <input type="password" placeholder="Vui lòng nhập mật khẩu" />
                 <FontAwesomeIcon icon={faUnlock} className={cx("form-input-icon")} />
               </div>
-              <p className={cx("forgotPassword")}>Quên mật khẩu</p>
-              <Button btn_blue className={cx("btn-submit")}>
-                Đăng nhập
-              </Button>
+              <div className={cx("action")}>
+                <p className={cx("forgotPassword")}>Quên mật khẩu</p>
+                <Button to="/me" btn_blue className={cx("btn-submit")}>
+                  Đăng nhập
+                </Button>
+              </div>
             </div>
             <div className={cx("social")}>
               <p> or connect using</p>
@@ -102,7 +104,7 @@ const Login = forwardRef(({ visible = false, onCancel }, ref) => {
                 Đăng ký
               </Button>
               <p className={cx("question")}>
-                Bạn đã có tài? <Button onClick={handleCloseRegister}>Đăng nhập ngay</Button>
+                Bạn đã có tài khoản? <Button onClick={handleCloseRegister}>Đăng nhập ngay</Button>
               </p>
             </div>
           </div>

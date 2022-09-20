@@ -33,16 +33,16 @@ export default function Header() {
       icon: homeIcon,
     },
     {
+      name: "Cơ sở y tế",
+      to: "/Danh-sach-phong-kham",
+      icon: pharmacyIcon,
+    },
+    {
       name: "Các dịch Vụ",
       to: "/dich-vu",
       icon: serviceIcon,
     },
 
-    {
-      name: "Nhà Thuốc Jio",
-      to: "/dich-vu",
-      icon: pharmacyIcon,
-    },
     {
       name: "Gói Chăm Sóc",
       to: "/dich-vu",

@@ -101,7 +101,7 @@ export default function Service() {
                     </div>
                   </div>
                   <div className={cx("service-item-more")}>
-                    <Button btn_green className={cx("service-item-more-btn")}>
+                    <Button to={`/dich-vu/${item.to}`} btn_green className={cx("service-item-more-btn")}>
                       Đặt tại phòng khám
                     </Button>
                     <Button to={`/dich-vu/${item.to}`} btn_outline className={cx("service-item-more-btn")}>

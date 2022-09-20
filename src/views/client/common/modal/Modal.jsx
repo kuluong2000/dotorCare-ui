@@ -96,8 +96,14 @@ export default function Modal({ visible = false, onCancel, onSubmit }) {
                   </div>
                 </div>
                 <div className={cx("address")}>
-                  <h4>Địa chỉ khám</h4>
-                  <p>Nguyễn Văn linh - Đà Nẵng</p>
+                  <div>
+                    <h4>Phòng khám khám</h4>
+                    <p>Phòng khám Đa khoa Duy Tân</p>
+                  </div>
+                  <div>
+                    <h4>Địa chỉ khám</h4>
+                    <p>Nguyễn Văn linh - Đà Nẵng</p>
+                  </div>
                 </div>
                 <div className={cx("price")}>
                   <h3>Thành tiền</h3>

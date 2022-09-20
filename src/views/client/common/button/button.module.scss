@@ -9,6 +9,9 @@
   font-family: var(--primary-font);
   border-radius: 999px;
 }
+.btn:hover {
+  color: var(--color-white);
+}
 .btn_green {
   background-color: var(--color-green);
 }

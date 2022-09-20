@@ -15,31 +15,37 @@ export default function Order() {
       name: "Bs.Nguyễn Thụy Đan",
       speciatly: "Nhãn khoa",
       image: imageDoctor,
+      to: "nguyen-thuy-dan",
     },
     {
       name: "Bs.Nguyễn Thụy Đan",
       speciatly: "Nhãn khoa",
       image: imageDoctor,
+      to: "nguyen-thuy-dan",
     },
     {
       name: "Bs.Nguyễn Thụy Đan",
       speciatly: "Nhãn khoa",
       image: imageDoctor,
+      to: "nguyen-thuy-dan",
     },
     {
       name: "Bs.Nguyễn Thụy Đan",
       speciatly: "Nhãn khoa",
       image: imageDoctor,
+      to: "nguyen-thuy-dan",
     },
     {
       name: "Bs.Nguyễn Thụy Đan",
       speciatly: "Nhãn khoa",
       image: imageDoctor,
+      to: "nguyen-thuy-dan",
     },
     {
       name: "Bs.Nguyễn Thụy Đan",
       speciatly: "Nhãn khoa",
       image: imageDoctor,
+      to: "nguyen-thuy-dan",
     },
   ];
 
@@ -68,7 +74,7 @@ export default function Order() {
                     </div>
                   </div>
                   <div className={cx("cover")}>
-                    <Button btn_green className={cx("cover-btn")}>
+                    <Button to={`/bac-si/${doctor.to}`} btn_green className={cx("cover-btn")}>
                       Đặt lịch khám
                     </Button>
                   </div>

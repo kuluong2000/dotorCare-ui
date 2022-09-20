@@ -107,7 +107,7 @@ export default function Home() {
                 <img className={cx("clinic-icon")} src={require("../../assets/images/clinic-icon.svg").default} alt="" />
                 <h1 className={cx("title")}>Chào mừng bạn đến với Tương lai của Chăm sóc Sức khỏe!</h1>
                 <div className={cx("action")}>
-                  <Button to="/dich-vu" className={cx(["btn-booking", "btn-banner"])}>
+                  <Button to="/danh-sach-phong-kham" className={cx(["btn-booking", "btn-banner"])}>
                     Đặt Hẹn Khám
                   </Button>
                   <Button className={cx(["btn-banner", "btn-learn-more"])}>Tìm Hiểu Thêm</Button>
