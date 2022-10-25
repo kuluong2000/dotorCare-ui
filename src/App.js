@@ -9,6 +9,7 @@ import publicRoutes from "./views/client/routes/routes";
 
 //import lib css
 import "bootstrap/dist/css/bootstrap.min.css";
+import "antd/dist/antd.css";
 // Import css files
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";

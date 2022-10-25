@@ -43,3 +43,18 @@
   border-color: #80bdff;
   background-color: var(--color-white);
 }
+
+.ant-table-content {
+  user-select: none;
+  text-align: center;
+}
+.ant-table-content tr th {
+  font-weight: bold;
+  text-align: center;
+}
+.ant-table-content::-webkit-scrollbar {
+  display: block;
+  height: 10px;
+  cursor: pointer;
+  border-radius: 20px;
+}

@@ -3,6 +3,8 @@ import Col from "react-bootstrap/Col";
 import Nav from "react-bootstrap/Nav";
 import Row from "react-bootstrap/Row";
 import Tab from "react-bootstrap/Tab";
+import Patient from "./patient/Patient";
+
 import "./me.scss";
 export default function Me() {
   return (
@@ -60,6 +62,9 @@ export default function Me() {
                 <Tab.Pane eventKey="second">
                   <div className="content">
                     <div className="title">Hồ sơ khám bệnh</div>
+                    <div className="form-table">
+                      <Patient></Patient>
+                    </div>
                   </div>
                 </Tab.Pane>
               </Tab.Content>
