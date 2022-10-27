@@ -28,10 +28,10 @@ export default function Modal({ visible = false, onCancel, onSubmit }) {
         <FontAwesomeIcon icon={faXmark} className={cx("modal-icon-close")} onClick={onCancel} />
         <h2 className={cx("heading")}>Đặt khám bệnh</h2>
         <div className={cx("main")}>
-          <div className={cx("info")}>
+          {/* <div className={cx("info")}>
             <Image src={require("../../assets/images/doctor/doctor1.png")} className={cx("avatar")}></Image>
             <h2 className={cx("name")}>TS.BS.Nguyễn Văn Sĩ</h2>
-          </div>
+          </div> */}
           <div className={cx("content")}>
             <div className={cx("content-info")}>
               <div className={cx("form")}>

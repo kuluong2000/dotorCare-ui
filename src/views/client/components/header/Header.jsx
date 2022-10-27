@@ -33,12 +33,7 @@ export default function Header() {
       icon: homeIcon,
     },
     {
-      name: "Cơ sở y tế",
-      to: "/Danh-sach-phong-kham",
-      icon: pharmacyIcon,
-    },
-    {
-      name: "Các dịch Vụ",
+      name: "Dịch Vụ",
       to: "/dich-vu",
       icon: serviceIcon,
     },
@@ -188,7 +183,7 @@ export default function Header() {
               </div>
               <ul className={cx("app-list")}>
                 <li className={cx("app-item")}>
-                  <Button to="/dichvu" btn_blue>
+                  <Button to="/dich-vu" btn_blue>
                     Đặt Hẹn Khám Ngay
                   </Button>
                 </li>

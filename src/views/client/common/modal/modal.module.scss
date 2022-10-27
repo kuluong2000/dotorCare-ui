@@ -71,7 +71,6 @@
   justify-content: space-between;
   padding-left: 15px;
   margin-left: 15px;
-  border-left: 1px solid #eee;
 }
 .form {
   width: 70%;
@@ -170,6 +169,9 @@
     background-color: var(--color-white);
     color: #80bdff;
     padding: 10px;
+    &:hover {
+      background-color: var(--color-dark-blue);
+    }
   }
   button.active {
     background-color: var(--color-dark-blue);

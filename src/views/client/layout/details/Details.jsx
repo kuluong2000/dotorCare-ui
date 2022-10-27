@@ -1,14 +1,26 @@
-import React from "react";
+import React, { useState } from "react";
 import classNames from "classnames/bind";
 import styles from "./details.module.scss";
 import Button from "../../common/button/Button";
 import Image from "../../common/image/Image";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCheck } from "@fortawesome/free-solid-svg-icons";
+import Modal from "../../common/modal/Modal";
 const cx = classNames.bind(styles);
 export default function Details() {
+  const [isVisible, setIsVisible] = useState(false);
+  const handleClickOpenModal = () => {
+    setIsVisible(true);
+    document.body.style = `overflow: hidden;`;
+  };
+  const handleCancelModal = () => {
+    setIsVisible(false);
+    document.body.style = `overflow: overlay;`;
+  };
+
   return (
     <>
+      <Modal visible={isVisible} onCancel={handleCancelModal}></Modal>
       <section className={cx("banner-care")}>
         <div className="container">
           <div className="row">
@@ -29,7 +41,7 @@ export default function Details() {
                   <h2 className={cx("price")}>500.000đ</h2>
                 </div>
                 <div className={cx("price-outside")}>
-                  <Button to={`/dich-vu/dat-hen-kham`} btn_blue className={cx("price-outside-btn")}>
+                  <Button onClick={handleClickOpenModal} btn_blue className={cx("price-outside-btn")}>
                     Đặt hẹn khám
                   </Button>
                 </div>

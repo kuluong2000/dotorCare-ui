@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import classNames from "classnames/bind";
 import styles from "./service.module.scss";
 
@@ -78,7 +78,7 @@ export default function Service() {
                 Bạn thấy không khỏe? <br /> Hãy để Jio Health chăm sóc cho bạn !
               </h1>
               <p className={cx("description")}>Tìm hiểu thêm về các dịch vụ chăm sóc sức khỏe của chúng tôi, từ cảm mạo thông thường đến các bệnh mạn tính - các bác sĩ Jio thân thiện sẽ tận tình chăm sóc bạn và gia đình.</p>
-              <Button className={cx("btn-booking")}>Đặt khám ngay</Button>
+              {/* <Button className={cx("btn-booking")}>Đặt khám ngay</Button> */}
             </div>
           </div>
         </div>

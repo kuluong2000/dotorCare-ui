@@ -6,6 +6,7 @@ import Tab from "react-bootstrap/Tab";
 import Patient from "./patient/Patient";
 
 import "./me.scss";
+import Info from "./info/Info";
 export default function Me() {
   return (
     <section className="profile">
@@ -27,36 +28,7 @@ export default function Me() {
                 <Tab.Pane eventKey="first">
                   <div className="content">
                     <div className="title">Thông tin bệnh nhân</div>
-                    <div className="form-group">
-                      <div className="col-12 col-md-6">
-                        <div className="form-item d-block w-100">
-                          <label htmlFor="">Họ và tên</label>
-                          <input type="text" />
-                        </div>
-                      </div>
-                      <div className="col-12 col-md-6">
-                        <div className="form-item">
-                          <label htmlFor="">Email</label>
-                          <input type="email" />
-                        </div>
-                      </div>
-                      <div className="col-12 col-md-6">
-                        <div className="form-item">
-                          <label htmlFor="">Số điện thoại</label>
-                          <input type="number" />
-                        </div>
-                      </div>
-                      <div className="col-12 col-md-6">
-                        <div className="form-item">
-                          <label htmlFor="">Giới tính</label>
-                          <select>
-                            <option value="">Chọn giới tính</option>
-                            <option>Nam</option>
-                            <option>Nữ</option>
-                          </select>
-                        </div>
-                      </div>
-                    </div>
+                    <Info></Info>
                   </div>
                 </Tab.Pane>
                 <Tab.Pane eventKey="second">

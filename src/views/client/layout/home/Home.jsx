@@ -107,7 +107,7 @@ export default function Home() {
                 <img className={cx("clinic-icon")} src={require("../../assets/images/clinic-icon.svg").default} alt="" />
                 <h1 className={cx("title")}>Chào mừng bạn đến với Tương lai của Chăm sóc Sức khỏe!</h1>
                 <div className={cx("action")}>
-                  <Button to="/danh-sach-phong-kham" className={cx(["btn-booking", "btn-banner"])}>
+                  <Button to="/dich-vu" className={cx(["btn-booking", "btn-banner"])}>
                     Đặt Hẹn Khám
                   </Button>
                   <Button className={cx(["btn-banner", "btn-learn-more"])}>Tìm Hiểu Thêm</Button>
@@ -121,20 +121,20 @@ export default function Home() {
         <div className="container">
           <div className="row">
             <div className={cx("clinic-main")}>
-              <h2 className={cx("clinic-title")}>Khám Phá các phòng Khám</h2>
+              <h2 className={cx("clinic-title")}>Khám Phá phòng Khám</h2>
               <div className={cx("clinic-content")}>
                 <div className={cx("clinic-image")}>
                   <img src={require("../../assets/images/banner-04.png")} alt="" />
                 </div>
                 <div className={cx("clinic-info")}>
-                  <h2 className={cx("clinic-name")}>mPlaza - HCM</h2>
+                  <h2 className={cx("clinic-name")}>mPlaza - Đà Nẵng</h2>
                   <div className={cx("clinic-address")}>
                     <img src={require("../../assets/images/location.svg").default} alt="" />
-                    <p>Lầu 1, Tòa nhà Mplaza, 39 Lê Duẩn, Bến Nghé, Quận 1</p>
+                    <p>1120 Nguyễn Văn Linh - Đà Nẵng</p>
                   </div>
                   <div className={cx("clinic-time")}>
                     <img src={require("../../assets/images/clock.svg").default} alt="" />
-                    <p>07:00 AM - 08:00 PM hằng ngày</p>
+                    <p>08:00 AM - 17:00 PM hằng ngày</p>
                   </div>
                   <div className={cx("clinic-action")}>
                     <Button btn_blue>Gọi Ngay</Button>
