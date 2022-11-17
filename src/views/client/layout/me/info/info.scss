@@ -21,8 +21,9 @@
     color: #ced4da;
   }
 }
+
 .form-item select {
-  background: url("../../../assets/images/doctor/arrowDown.svg") no-repeat right 15px center;
+  background: url('../../../assets/images/doctor/arrowDown.svg') no-repeat right 15px center;
   -webkit-appearance: none;
   appearance: none;
 }
@@ -44,7 +45,7 @@
   margin-right: 20px;
 }
 .form-upload {
-  width: 0.1px;
+  width: 0.1px !important;
   height: 0.1px;
   opacity: 0;
   overflow: hidden;

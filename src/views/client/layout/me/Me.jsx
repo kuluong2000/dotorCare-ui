@@ -1,13 +1,21 @@
-import React from "react";
-import Col from "react-bootstrap/Col";
-import Nav from "react-bootstrap/Nav";
-import Row from "react-bootstrap/Row";
-import Tab from "react-bootstrap/Tab";
-import Patient from "./patient/Patient";
+import React, { useEffect } from 'react';
+import Col from 'react-bootstrap/Col';
+import Nav from 'react-bootstrap/Nav';
+import Row from 'react-bootstrap/Row';
+import Tab from 'react-bootstrap/Tab';
+import Patient from './patient/Patient';
 
-import "./me.scss";
-import Info from "./info/Info";
+import './me.scss';
+import Info from './info/Info';
+import { useNavigate } from 'react-router-dom';
 export default function Me() {
+  const navigate = useNavigate();
+
+  const token = JSON.parse(localStorage.getItem('token'));
+
+  useEffect(() => {
+    if (!token) return navigate('/');
+  }, [token]);
   return (
     <section className="profile">
       <div className="container">

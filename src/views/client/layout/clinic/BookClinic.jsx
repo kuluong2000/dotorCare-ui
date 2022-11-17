@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+
 import classNames from "classnames/bind";
 import Image from "../../common/image/Image";
 import Button from "../../common/button/Button";
@@ -6,6 +7,7 @@ import Modal from "../../common/modal/Modal";
 import Slider from "react-slick";
 import styles from "./bookClinic.module.scss";
 import "./custom-slick.scss";
+
 const cx = classNames.bind(styles);
 export default function BookClinic() {
   const [isVisible, setIsVisible] = useState(false);
@@ -42,6 +44,7 @@ export default function BookClinic() {
     // variableWidth: true,
     // swipeToSlide: true,
   };
+
   document.addEventListener("click", (e) => {
     const item = document.querySelectorAll(`.${cx("related-doctor-item")}`);
     item.forEach((el) => {
@@ -69,6 +72,7 @@ export default function BookClinic() {
     setIsVisible(false);
     document.body.style = `overflow: overlay;`;
   };
+
   return (
     <main>
       <Modal visible={isVisible} onCancel={handleCancelModal}></Modal>
