@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import moment from 'moment';
 import classNames from 'classnames/bind';
 import Image from '../image/Image';
 import Button from '../button/Button';
@@ -10,21 +11,22 @@ import { faXmark } from '@fortawesome/free-solid-svg-icons';
 import { useDispatch, useSelector } from 'react-redux';
 import { userBooking } from '../../redux/actions';
 import Swal from 'sweetalert2';
+import { DatePicker, Space } from 'antd';
 
 const cx = classNames.bind(styles);
 export default function Modal({ data, visible = false, onCancel }) {
   const dispatch = useDispatch();
+  const dateFormat = 'DD/MM/YYYY';
   const { dataUser, patient } = useSelector((state) => state.authentication);
   const [formData, setFormData] = useState({
     gender: '',
     message: '',
     date: '',
     time: '',
-    price: '',
   });
 
   useEffect(() => {
-    setFormData(dataUser);
+    setFormData({ ...dataUser, date: moment().format('DD/MM/YYYY') });
   }, [dataUser]);
 
   const handleOnChange = (e) => {
@@ -55,8 +57,14 @@ export default function Modal({ data, visible = false, onCancel }) {
       alert('vui lòng nhập đầy đủ thông tin');
     } else {
       dispatch(
-        userBooking({ ...formData, patient: patient, department: data?._id })
+        userBooking({
+          ...formData,
+          patient: patient,
+          price: data?.price,
+          department: data?._id,
+        })
       );
+      onCancel();
     }
   };
   const listTime = [
@@ -176,14 +184,36 @@ export default function Modal({ data, visible = false, onCancel }) {
                 </div>
                 <div className={cx('form-item')}>
                   <label>
-                    Tin nhắn <span>*</span>
+                    Lý do <span>*</span>
                   </label>
-                  <input type="text" placeholder="vui lòng nhập lý do khám" />
+                  <input
+                    type="text"
+                    placeholder="vui lòng nhập lý do khám"
+                    onChange={handleOnChange}
+                    name="message"
+                    value={formData?.message || ''}
+                  />
                 </div>
               </div>
               <div className={cx('time-booking')}>
                 <div className={cx('day-choose')}>
-                  <label htmlFor="">Chọn ngày</label>
+                  <Space direction="vertical">
+                    <DatePicker
+                      format={dateFormat}
+                      defaultValue={moment()}
+                      name="date"
+                      onChange={(e, dateString) =>
+                        setFormData({ ...formData, date: dateString })
+                      }
+                      disabledDate={(current) => {
+                        let customDate = moment().format('DD/MM/YYYY');
+                        return (
+                          current && current < moment(customDate, 'DD/MM/YYYY')
+                        );
+                      }}
+                    />
+                  </Space>
+                  {/* <label htmlFor="">Chọn ngày</label>
                   <select
                     name=""
                     id=""
@@ -194,7 +224,7 @@ export default function Modal({ data, visible = false, onCancel }) {
                     <option value="31/8/2022">31/8/2022</option>
                     <option value="1/9/2022">1/9/2022</option>
                     <option value="2/9/2022">2/9/2022</option>
-                  </select>
+                  </select> */}
                 </div>
                 <div className={cx('time')}>
                   <p> Chọn thời gian</p>

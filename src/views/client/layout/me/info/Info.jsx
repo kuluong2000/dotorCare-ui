@@ -9,7 +9,7 @@ import { useParams } from 'react-router-dom';
 import { UpdateMe } from '../../../redux/actions';
 export default function Info() {
   const { dataUser } = useSelector((state) => state.authentication);
-  const { id } = useParams();
+
   const dispatch = useDispatch();
   const [formData, setFormData] = useState({
     lastName: '',
@@ -40,14 +40,14 @@ export default function Info() {
       try {
         const fileImage = await axios.post(`${BASE_URL}/upload`, formDataFile);
         return dispatch(
-          UpdateMe(id, { ...formData, image: fileImage.data.data })
+          UpdateMe(dataUser._id, { ...formData, image: fileImage.data.data })
         );
       } catch (error) {
         alert('Cập nhật không thành công');
         // update profile khong thanh cong
       }
     }
-    dispatch(UpdateMe(id, formData));
+    dispatch(UpdateMe(dataUser._id, formData));
   };
   return (
     <div className="form-group">

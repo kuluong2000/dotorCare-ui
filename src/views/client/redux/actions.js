@@ -154,6 +154,7 @@ export const userBooking = (data) => {
     axios
       .post(`${BASE_URL}/user/booking`, data)
       .then((res) => {
+        console.log(res.data);
         if (res.status === 201) {
           return alert('đặt thành công');
         } else {

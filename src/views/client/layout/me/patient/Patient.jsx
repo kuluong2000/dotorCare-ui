@@ -4,6 +4,7 @@ import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom';
 import Button from '../../../common/button/Button';
+import { formatPrice } from './../../../utils/numberFomat';
 import {
   openModal,
   hideModal,
@@ -37,6 +38,7 @@ export default function Patient() {
       dataIndex: 'lastName',
       key: 'lastName',
       fixed: 'left',
+      width: 100,
       render: (text, record) => record.patient?.account?.people?.lastName,
     },
     {
@@ -44,6 +46,7 @@ export default function Patient() {
       dataIndex: 'firstName',
       key: 'firstName',
       fixed: 'left',
+      width: 100,
       render: (text, record) => record.patient?.account?.people?.firstName,
     },
     {
@@ -73,12 +76,26 @@ export default function Patient() {
       title: 'Chuẩn đoán',
       dataIndex: 'diseases',
       key: 'diseases',
-      render: (text) => <Typography.Text ellipsis>{text}</Typography.Text>,
+      // render: (text) => <Typography.Text ellipsis>{text}</Typography.Text>,
+      // render: (text) => <Typography.Text ellipsis>{text}</Typography.Text>,
     },
     {
       title: 'Giá tiền',
       dataIndex: 'price',
       key: 'price',
+      render: (text, record) => formatPrice(record?.price),
+    },
+    {
+      title: 'Đơn Thuốc',
+      dataIndex: 'medicine',
+      key: 'medicine',
+      width: 150,
+    },
+    {
+      title: 'Dặn dò của bác sĩ',
+      dataIndex: 'note',
+      key: 'note',
+      width: 200,
     },
   ];
 
@@ -117,6 +134,7 @@ export default function Patient() {
       title: 'Chuẩn đoán',
       dataIndex: 'diseases',
       key: 'diseases',
+      width: 200,
       render: (text) => <Typography.Text ellipsis>{text}</Typography.Text>,
     },
     {
@@ -124,6 +142,7 @@ export default function Patient() {
       dataIndex: 'price',
       key: 'price',
       width: 150,
+      render: (text, record) => formatPrice(record?.price),
     },
 
     {
@@ -131,11 +150,15 @@ export default function Patient() {
       key: 'operation',
       width: 200,
       fixed: 'right',
-      render: (text, record) => (
-        <Button btn_green onClick={() => showModal(record)}>
-          Xem chi tiết
-        </Button>
-      ),
+      render: (text, record) => {
+        if (record?.status === true) {
+          return (
+            <Button btn_green onClick={() => showModal(record)}>
+              Xem chi tiết
+            </Button>
+          );
+        }
+      },
     },
   ];
 
@@ -152,6 +175,9 @@ export default function Patient() {
           columns={detail}
           dataSource={[dataModal]}
           pagination={false}
+          scroll={{
+            x: 1300,
+          }}
         />
       </Modal>
       <Table

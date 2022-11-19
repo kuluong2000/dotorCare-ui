@@ -160,9 +160,9 @@ const Login = forwardRef(({ visible = false, onCancel }, ref) => {
                   <input
                     type="text"
                     placeholder="Họ & tên lót"
-                    name="firstName"
+                    name="lastName"
                     onChange={handleOnChange}
-                    value={formData?.firstName || ''}
+                    value={formData?.lastName || ''}
                   />
                   <FontAwesomeIcon
                     icon={faUser}
@@ -174,8 +174,8 @@ const Login = forwardRef(({ visible = false, onCancel }, ref) => {
                     type="text"
                     placeholder="Tên"
                     onChange={handleOnChange}
-                    value={formData?.lastName || ''}
-                    name="lastName"
+                    value={formData?.firstName || ''}
+                    name="firstName"
                   />
                   <FontAwesomeIcon
                     icon={faUser}
