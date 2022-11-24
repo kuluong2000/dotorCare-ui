@@ -164,3 +164,41 @@ export const userBooking = (data) => {
       .catch((err) => dispatch(bookingFail()));
   };
 };
+
+//DOCTOR
+export const getAllDoctorOfDepartmentStart = () => {
+  return {
+    type: actionType.GET_ALL_DOCTOR_OF_DEPARTMENT_START,
+  };
+};
+export const getAllDoctorOfDepartmentSuccess = (data) => {
+  return {
+    type: actionType.GET_ALL_DOCTOR_OF_DEPARTMENT_SUCCESS,
+    payload: data,
+  };
+};
+export const getAllDoctorOfDepartmentFail = () => {
+  return {
+    type: actionType.GET_ALL_DOCTOR_OF_DEPARTMENT_FAIL,
+  };
+};
+
+export const getAllDoctorOfDepartment = (id) => {
+  return (dispatch) => {
+    dispatch(getAllDoctorOfDepartmentStart());
+    axios
+      .get(`${BASE_URL}/admin/doctor/${id}`)
+      .then((res) => {
+        if (res.status === 200) {
+          localStorage.setItem(
+            'doctorOfDepartment',
+            JSON.stringify(res.data.data)
+          );
+          return dispatch(getAllDoctorOfDepartmentSuccess(res.data.data));
+        } else {
+          return dispatch(getAllDoctorOfDepartmentFail());
+        }
+      })
+      .catch((err) => dispatch(getAllDoctorOfDepartmentFail()));
+  };
+};

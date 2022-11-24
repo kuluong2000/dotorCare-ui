@@ -7,6 +7,7 @@ import Image from '../../common/image/Image';
 import axios from 'axios';
 
 import BASE_URL from '../../utils/configUrl';
+import Input from 'antd/lib/input/Input';
 const cx = classNames.bind(styles);
 export default function Service() {
   const [clinics, setClinics] = useState([]);
@@ -48,6 +49,13 @@ export default function Service() {
         <div className="container">
           <div className="row">
             <h2 className={cx('title')}>Dịch vụ phòng khám</h2>
+            <div className={cx('input-search')}>
+              <Input
+                className=""
+                placeholder="Nhập tên bệnh cần tìm kiếm"
+              ></Input>
+            </div>
+
             <ul className={cx('service-list')}>
               {clinics.map((item, idx) => (
                 <li key={idx} className={cx('service-item')}>

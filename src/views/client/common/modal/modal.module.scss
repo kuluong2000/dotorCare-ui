@@ -64,6 +64,7 @@
   color: var(--color-dark-blue);
 }
 .content {
+  width: 100%;
 }
 .content-info {
   width: 100%;
@@ -73,7 +74,7 @@
   margin-left: 15px;
 }
 .form {
-  width: 70%;
+  width: 50%;
 }
 .form-item {
   display: flex;
@@ -93,7 +94,7 @@
   input {
     padding: 10px 20px;
     width: 100%;
-    border-radius: 20px;
+    border-radius: 5px;
     font-family: var(--primary-font);
     font-size: 16px;
     font-weight: 500;
@@ -123,7 +124,7 @@
   }
 }
 .time-booking {
-  width: 100%;
+  width: 50%;
   margin-left: 10px;
 }
 .day-choose {
@@ -164,11 +165,12 @@
   flex-wrap: wrap;
   gap: 10px;
   button {
-    width: 125px;
+    width: 85px;
     border: 1px solid #dadada;
     background-color: var(--color-white);
     color: #80bdff;
-    padding: 10px;
+    padding: 7px 10px;
+    border-radius: 5px;
     &:hover {
       background-color: var(--color-dark-blue);
     }
@@ -176,6 +178,16 @@
   button.active {
     background-color: var(--color-dark-blue);
     color: white;
+  }
+  button.disable {
+    user-select: none;
+    cursor: not-allowed;
+    pointer-events: none;
+    opacity: 0.4;
+    background-color: #eee;
+    &:hover {
+      color: var(--color-green);
+    }
   }
 }
 .address {
@@ -213,6 +225,7 @@
   display: block;
   margin: 0 auto;
   padding: 10px 20px;
+  border-radius: 5px;
 }
 
 @media (max-width: 1199px) {
@@ -230,11 +243,8 @@
     width: 40%;
   }
   .content {
-    height: 80vh;
+    height: auto;
     overflow-x: hidden;
-    &-info {
-      flex-direction: column;
-    }
   }
   .btn-submit {
     margin-top: 15px;
@@ -243,16 +253,25 @@
 
 @media (max-width: 991px) {
   .main {
-    width: 90%;
+    width: 100%;
   }
   .form {
     width: 100%;
+    &-item {
+      width: 90%;
+    }
   }
   .time-booking {
     width: auto;
   }
   .list-btn button {
     width: 125px;
+  }
+  .content {
+    height: 500px;
+  }
+  .content-info {
+    flex-direction: column;
   }
 }
 @media (max-width: 767px) {
