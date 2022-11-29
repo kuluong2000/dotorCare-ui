@@ -68,6 +68,7 @@ export default function Modal({ data, visible = false, onCancel }) {
       dispatch(
         userBooking({
           ...formData,
+          date: moment(new Date(formData.date)).toISOString(),
           patient: patient,
           price: data?.price,
           department: data?._id,
@@ -231,14 +232,14 @@ export default function Modal({ data, visible = false, onCancel }) {
                   </label>
                   <Space direction="vertical">
                     <DatePicker
-                      format={dateFormat}
+                      // format={dateFormat}
                       defaultValue={moment()}
                       name="date"
                       onChange={handleOnChangeDate}
                       disabledDate={(current) => {
-                        let customDate = moment().format('DD/MM/YYYY');
+                        let customDate = moment().format('DD-MM-YYYY');
                         return (
-                          current && current < moment(customDate, 'DD/MM/YYYY')
+                          current && current < moment(customDate, 'DD-MM-YYYY')
                         );
                       }}
                     />
