@@ -15,7 +15,7 @@ import { doctor } from '../../redux/reducer/doctor';
 const cx = classNames.bind(styles);
 export default function Modal({ data, visible = false, onCancel }) {
   const dispatch = useDispatch();
-  const dateFormat = 'DD/MM/YYYY';
+
   const { dataUser, patient } = useSelector((state) => state.authentication);
   const { doctorOfDepartment } = useSelector((state) => state.doctor);
   const [weekend, setWeekend] = useState('');
@@ -25,8 +25,9 @@ export default function Modal({ data, visible = false, onCancel }) {
     date: '',
     time: '',
   });
+
   useEffect(() => {
-    setFormData({ ...dataUser, date: moment().format('DD/MM/YYYY') });
+    setFormData({ ...dataUser, date: moment().format('YYYY-MM-DD') });
   }, [dataUser]);
   useEffect(() => {
     if (data._id) {
@@ -60,7 +61,7 @@ export default function Modal({ data, visible = false, onCancel }) {
   });
 
   //handle submit
-
+  console.log(moment()._d, 'datre', new Date());
   const handleSubmit = () => {
     if (!formData?.date || !formData?.time || !formData?.message) {
       alert('vui lòng nhập đầy đủ thông tin');
@@ -74,6 +75,8 @@ export default function Modal({ data, visible = false, onCancel }) {
           department: data?._id,
         })
       );
+      console.log(formData);
+
       const listBtn = document.querySelectorAll(`.${cx('list-btn')} > button`);
       listBtn.forEach((item) => item.classList.remove(`${cx('active')}`));
       onCancel();
@@ -256,7 +259,7 @@ export default function Modal({ data, visible = false, onCancel }) {
                           key={idx}
                           className={
                             !formData?.date ||
-                            (moment().format('DD/MM/YYYY') === formData.date &&
+                            (moment().format('YYYY-MM-DD') === formData.date &&
                               `${moment().hour()}:${moment().minute()}` >=
                                 el.hour)
                               ? cx('disable')
