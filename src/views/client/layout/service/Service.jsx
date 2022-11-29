@@ -1,24 +1,45 @@
 import React, { useEffect, useState } from 'react';
 import classNames from 'classnames/bind';
 import styles from './service.module.scss';
-
+import axios from 'axios';
+//import comp
 import Button from '../../common/button/Button';
 import Image from '../../common/image/Image';
-import axios from 'axios';
-
+//import config URL
 import BASE_URL from '../../utils/configUrl';
+
+//import lib
 import Input from 'antd/lib/input/Input';
+import { LoadingOutlined } from '@ant-design/icons';
+import { Spin } from 'antd';
+
+//import custom hook
+import useDebounce from '../../hook/useDebounce';
+
+import { useDispatch, useSelector } from 'react-redux';
+import { getAllDepartmentOfDiseases } from '../../redux/actions';
 const cx = classNames.bind(styles);
 export default function Service() {
+  const dispatch = useDispatch();
+  const { department, loading } = useSelector((state) => state.department);
   const [clinics, setClinics] = useState([]);
-  useEffect(() => {
-    axios.get(`${BASE_URL}/admin/department`).then((res) => {
-      if (res.status === 200) {
-        setClinics(res.data.data);
-      }
-    });
-  }, []);
+  const [searchValue, setSearchValue] = useState('');
 
+  const debouncedValue = useDebounce(searchValue, 500);
+
+  useEffect(() => {
+    dispatch(getAllDepartmentOfDiseases());
+    // axios.get(`${BASE_URL}/admin/department`).then((res) => {
+    //   if (res.status === 200) {
+    //     setClinics(res.data.data);
+    //   }
+    // });
+  }, []);
+  useEffect(() => {
+    dispatch(getAllDepartmentOfDiseases(debouncedValue));
+  }, [debouncedValue, dispatch]);
+
+  console.log(department);
   return (
     <>
       <section className={cx('banner')}>
@@ -53,57 +74,76 @@ export default function Service() {
               <Input
                 className=""
                 placeholder="Nhập tên bệnh cần tìm kiếm"
+                onChange={(e) => setSearchValue(e.target.value)}
               ></Input>
             </div>
-
-            <ul className={cx('service-list')}>
-              {clinics.map((item, idx) => (
-                <li key={idx} className={cx('service-item')}>
-                  <div className={cx('service-item-content')}>
-                    <div className={cx('service-item-image')}>
-                      <Image
-                        src={
-                          item.image
-                            ? `http://127.0.0.1:3030/${item.image}`
-                            : ''
-                        }
-                      />
-                    </div>
-                    <div className={cx('service-item-info')}>
-                      <h4 className={cx('service-item-title')}>
-                        {item.nameDepartment}
-                      </h4>
-                      <p className={cx('service-item-desc')}>
-                        giá tư vấn chỉ từ
-                      </p>
-                      <div className={cx('service-item-price')}>
-                        {' '}
-                        {item.price.toLocaleString('vi-vn', {
-                          style: 'currency',
-                          currency: 'VND',
-                        })}
+            {loading || (!debouncedValue && searchValue) ? (
+              <Spin
+                indicator={
+                  <LoadingOutlined
+                    style={{
+                      fontSize: 24,
+                    }}
+                    spin
+                  />
+                }
+              />
+            ) : (
+              <ul className={cx('service-list')}>
+                {department ? (
+                  department.map((item, idx) => (
+                    <li key={idx} className={cx('service-item')}>
+                      <div className={cx('service-item-content')}>
+                        <div className={cx('service-item-image')}>
+                          <Image
+                            src={
+                              item.image
+                                ? `http://127.0.0.1:3030/${item.image}`
+                                : ''
+                            }
+                          />
+                        </div>
+                        <div className={cx('service-item-info')}>
+                          <h4 className={cx('service-item-title')}>
+                            {item.nameDepartment}
+                          </h4>
+                          <p className={cx('service-item-desc')}>
+                            giá tư vấn chỉ từ
+                          </p>
+                          <div className={cx('service-item-price')}>
+                            {' '}
+                            {item.price.toLocaleString('vi-vn', {
+                              style: 'currency',
+                              currency: 'VND',
+                            })}
+                          </div>
+                        </div>
                       </div>
-                    </div>
-                  </div>
-                  <div className={cx('service-item-more')}>
-                    <Button
-                      to={`/dich-vu/${item.slugs}`}
-                      btn_green
-                      className={cx('service-item-more-btn')}
-                    >
-                      Đặt tại phòng khám
-                    </Button>
-                    <Button
-                      to={`/dich-vu/${item.slugs}`}
-                      btn_outline
-                      className={cx('service-item-more-btn')}
-                    >
-                      Xem chi tiết
-                    </Button>
-                  </div>
-                </li>
-              ))}
-            </ul>
+                      <div className={cx('service-item-more')}>
+                        <Button
+                          to={`/dich-vu/${item.slugs}`}
+                          btn_green
+                          className={cx('service-item-more-btn')}
+                        >
+                          Đặt tại phòng khám
+                        </Button>
+                        <Button
+                          to={`/dich-vu/${item.slugs}`}
+                          btn_outline
+                          className={cx('service-item-more-btn')}
+                        >
+                          Xem chi tiết
+                        </Button>
+                      </div>
+                    </li>
+                  ))
+                ) : (
+                  <p className="w-100 text-center">
+                    Không có phòng khám phù hợp hoặc từ khóa nhập vào bị sai
+                  </p>
+                )}
+              </ul>
+            )}
           </div>
         </div>
       </section>

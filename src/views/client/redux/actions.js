@@ -202,3 +202,51 @@ export const getAllDoctorOfDepartment = (id) => {
       .catch((err) => dispatch(getAllDoctorOfDepartmentFail()));
   };
 };
+
+export const getAllDepartmentStart = () => {
+  return {
+    type: actionType.GET_ALL_DEPARTMENT_START,
+  };
+};
+
+export const getAllDepartmentSuccess = (data) => {
+  return {
+    type: actionType.GET_ALL_DEPARTMENT_SUCCESS,
+    payload: data,
+  };
+};
+export const getAllDepartmentFail = () => {
+  return {
+    type: actionType.GET_ALL_DEPARTMENT_FAIL,
+  };
+};
+
+export const getAllDepartmentOfDiseases = (data) => {
+  return (dispatch) => {
+    dispatch(getAllDepartmentStart());
+    // const keyWord = json
+    if (data) {
+      axios
+        .get(`${BASE_URL}/admin/departmentOfDiseases?nameDiseases=${data}`)
+        .then((res) => {
+          if (res.status === 200) {
+            return dispatch(getAllDepartmentSuccess(res.data.data));
+          } else {
+            return dispatch(getAllDepartmentFail());
+          }
+        })
+        .catch((err) => dispatch(getAllDepartmentFail()));
+    } else {
+      axios
+        .get(`${BASE_URL}/admin/departmentOfDiseases`)
+        .then((res) => {
+          if (res.status === 200) {
+            return dispatch(getAllDepartmentSuccess(res.data.data));
+          } else {
+            return dispatch(getAllDepartmentFail());
+          }
+        })
+        .catch((err) => dispatch(getAllDepartmentFail()));
+    }
+  };
+};
