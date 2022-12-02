@@ -1,4 +1,5 @@
 import axios from 'axios';
+import Swal from 'sweetalert2';
 import BASE_URL from '../utils/configUrl';
 import * as actionType from './actionTypes';
 export const openModal = (data) => {
@@ -84,7 +85,10 @@ export const login = (data) => {
           return dispatch(authenticationFail());
         }
       })
-      .catch((err) => dispatch(authenticationFail()));
+      .catch((err) => {
+        Swal.fire(err.response.data.error);
+        return dispatch(authenticationFail());
+      });
   };
 };
 export const logout = () => {
