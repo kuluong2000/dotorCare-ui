@@ -75,18 +75,18 @@ export default function Details() {
               <div className={cx('banner-care-images-circle-2')}></div>
               <div className={cx('banner-care-images-person')}>
                 <Image
-                  src={`http://127.0.0.1:3030/${data ? data.image : ''}`}
+                  src={data && `http://127.0.0.1:3030/${data?.image}`}
                 ></Image>
               </div>
             </div>
             <div className={cx('banner-care-inner')}>
-              <h1 className={cx('heading')}>{data.nameDepartment}</h1>
-              <p className={cx('description')}>{data.description}</p>
+              <h1 className={cx('heading')}>{data?.nameDepartment}</h1>
+              <p className={cx('description')}>{data?.description}</p>
               <div className={cx('price-group')}>
                 <div className={cx('price-inside')}>
                   <p className={cx('price-title')}>Giá tư vấn chỉ từ</p>
                   <h2 className={cx('price')}>
-                    {formatPrice(data.price ? data.price : 1)}
+                    {formatPrice(data?.price ? data?.price : 1)}
                   </h2>
                 </div>
                 <div className={cx('price-outside')}>
@@ -107,8 +107,8 @@ export default function Details() {
         <div className="container">
           <div className="row">
             <h2 className={cx('title')}>
-              Các bệnh lý về mắt sẽ được bác sĩ của Jio Health tầm soát - điều
-              trị
+              Các bệnh lý về {data?.nameDepartment} sẽ được bác sĩ của Jio
+              Health tầm soát - điều trị
             </h2>
             <div className={cx('content')}>
               <ul className={cx('section-care-info-list')}>
@@ -120,7 +120,7 @@ export default function Details() {
                       onClick={() => showModal(el)}
                     >
                       <FontAwesomeIcon icon={faCheck} />
-                      <p>{el.nameDiseases}</p>
+                      <p>{el?.nameDiseases}</p>
                     </li>
                   ))
                 ) : (
@@ -139,10 +139,10 @@ export default function Details() {
                   footer={null}
                 >
                   <h3 className={cx('section-care-info-item-title')}>
-                    {diseasesInfo.nameDiseases}
+                    {diseasesInfo?.nameDiseases}
                   </h3>
                   <p className={cx('section-care-info-item-desc')}>
-                    {diseasesInfo.description}
+                    {diseasesInfo?.description}
                   </p>
                 </Modals>
               </ul>

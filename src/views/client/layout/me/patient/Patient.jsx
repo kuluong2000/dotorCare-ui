@@ -121,6 +121,8 @@ export default function Patient() {
       dataIndex: 'date',
       key: 'date',
       width: 120,
+      render: (idx, data) =>
+        new Date(Date.parse(data.date)).toLocaleDateString(),
     },
     {
       title: 'Bác sĩ khám',

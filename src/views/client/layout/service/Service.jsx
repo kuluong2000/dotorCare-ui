@@ -39,7 +39,6 @@ export default function Service() {
     dispatch(getAllDepartmentOfDiseases(debouncedValue));
   }, [debouncedValue, dispatch]);
 
-  console.log(department);
   return (
     <>
       <section className={cx('banner')}>

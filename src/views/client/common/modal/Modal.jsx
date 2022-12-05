@@ -61,20 +61,19 @@ export default function Modal({ data, visible = false, onCancel }) {
   });
 
   //handle submit
-  console.log(moment()._d, 'datre', new Date());
   const handleSubmit = () => {
     if (!formData?.date || !formData?.time || !formData?.message) {
       alert('vui lòng nhập đầy đủ thông tin');
     } else {
-      dispatch(
-        userBooking({
-          ...formData,
-          date: moment(new Date(formData.date)).toISOString(),
-          patient: patient,
-          price: data?.price,
-          department: data?._id,
-        })
-      );
+      // dispatch(
+      //   userBooking({
+      //     ...formData,
+      //     date: moment(new Date(formData.date)).toISOString(),
+      //     patient: patient,
+      //     price: data?.price,
+      //     department: data?._id,
+      //   })
+      // );
       console.log(formData);
 
       const listBtn = document.querySelectorAll(`.${cx('list-btn')} > button`);
@@ -83,7 +82,7 @@ export default function Modal({ data, visible = false, onCancel }) {
       setFormData({
         ...formData,
         message: '',
-        date: moment().format(),
+        date: moment().format('YYYY-MM-DD'),
       });
     }
   };
@@ -134,6 +133,7 @@ export default function Modal({ data, visible = false, onCancel }) {
       hour: '17:00',
     },
   ];
+
   return (
     <div className={classes}>
       <div className={cx('wrapper')}>
@@ -182,7 +182,7 @@ export default function Modal({ data, visible = false, onCancel }) {
                     value={dataUser?.email || ''}
                   />
                 </div>
-                <div className={cx('form-item')}>
+                {/* <div className={cx('form-item')}>
                   <label>Giới tính</label>
                   <select
                     disabled
@@ -190,11 +190,13 @@ export default function Modal({ data, visible = false, onCancel }) {
                     name="gender"
                     value={formData?.gender || ''}
                   >
-                    <option>Chọn giới tính</option>
+                    <option disabled selected>
+                      Chọn giới tính
+                    </option>
                     <option value="Nam">Nam</option>
                     <option value="Nữ">Nữ</option>
                   </select>
-                </div>
+                </div> */}
                 <div className={cx('form-item')}>
                   <label>
                     Lý do khám<span className="text-danger">*</span>
@@ -214,11 +216,12 @@ export default function Modal({ data, visible = false, onCancel }) {
                   <label>Chọn bác sĩ</label>
                   <select
                     placeholder="Chọn bác sĩ"
+                    defaultValue={'DEFAULT'}
                     onChange={(e) => {
                       setFormData({ ...formData, doctor: e.target.value });
                     }}
                   >
-                    <option disabled selected defaultValue>
+                    <option disabled value="DEFAULT">
                       Chọn bác sĩ
                     </option>
                     {doctorOfDepartment &&
@@ -260,8 +263,7 @@ export default function Modal({ data, visible = false, onCancel }) {
                           className={
                             !formData?.date ||
                             (moment().format('YYYY-MM-DD') === formData.date &&
-                              `${moment().hour()}:${moment().minute()}` >=
-                                el.hour)
+                              `${moment().format('HH:mm')}` >= el.hour)
                               ? cx('disable')
                               : ''
                           }
