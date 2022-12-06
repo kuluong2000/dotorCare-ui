@@ -11,7 +11,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { userBooking, getAllDoctorOfDepartment } from '../../redux/actions';
 import Swal from 'sweetalert2';
 import { DatePicker, Select, Space } from 'antd';
-import { doctor } from '../../redux/reducer/doctor';
+// import { doctor } from '../../redux/reducer/doctor';
 const cx = classNames.bind(styles);
 export default function Modal({ data, visible = false, onCancel }) {
   const dispatch = useDispatch();
@@ -65,15 +65,15 @@ export default function Modal({ data, visible = false, onCancel }) {
     if (!formData?.date || !formData?.time || !formData?.message) {
       alert('vui lòng nhập đầy đủ thông tin');
     } else {
-      // dispatch(
-      //   userBooking({
-      //     ...formData,
-      //     date: moment(new Date(formData.date)).toISOString(),
-      //     patient: patient,
-      //     price: data?.price,
-      //     department: data?._id,
-      //   })
-      // );
+      dispatch(
+        userBooking({
+          ...formData,
+          date: moment(new Date(formData.date)).toISOString(),
+          patient: patient,
+          price: data?.price,
+          department: data?._id,
+        })
+      );
       console.log(formData);
 
       const listBtn = document.querySelectorAll(`.${cx('list-btn')} > button`);
@@ -133,7 +133,6 @@ export default function Modal({ data, visible = false, onCancel }) {
       hour: '17:00',
     },
   ];
-
   return (
     <div className={classes}>
       <div className={cx('wrapper')}>
@@ -257,26 +256,47 @@ export default function Modal({ data, visible = false, onCancel }) {
                   </p>
                   {weekend !== 7 ? (
                     <div className={cx('list-btn')}>
-                      {listTime.map((el, idx) => (
-                        <Button
-                          key={idx}
-                          className={
-                            !formData?.date ||
-                            (moment().format('YYYY-MM-DD') === formData.date &&
-                              `${moment().format('HH:mm')}` >= el.hour)
-                              ? cx('disable')
-                              : ''
-                          }
-                          onClick={(e) =>
-                            setFormData({
-                              ...formData,
-                              time: e.target.innerHTML,
-                            })
-                          }
-                        >
-                          {el.hour}
-                        </Button>
-                      ))}
+                      {!formData?.doctor
+                        ? listTime.map((el, idx) => (
+                            <Button
+                              key={idx}
+                              className={
+                                !formData?.date ||
+                                (moment().format('YYYY-MM-DD') ===
+                                  formData.date &&
+                                  `${moment().format('HH:mm')}` >= el.hour)
+                                  ? cx('disable')
+                                  : ''
+                              }
+                              onClick={(e) =>
+                                setFormData({
+                                  ...formData,
+                                  time: e.target.innerHTML,
+                                })
+                              }
+                            >
+                              {el.hour}
+                            </Button>
+                          ))
+                        : listTime.map((el, idx) => (
+                            <Button
+                              key={idx}
+                              className={
+                                !formData?.date ||
+                                moment().format('YYYY-MM-DD') === formData.date
+                                  ? cx('disable')
+                                  : ''
+                              }
+                              onClick={(e) =>
+                                setFormData({
+                                  ...formData,
+                                  time: e.target.innerHTML,
+                                })
+                              }
+                            >
+                              {el.hour}
+                            </Button>
+                          ))}
                     </div>
                   ) : (
                     <div>không có lịch khám vào thời gian này</div>
