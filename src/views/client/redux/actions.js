@@ -165,7 +165,10 @@ export const userBooking = (data) => {
           return dispatch(bookingFail());
         }
       })
-      .catch((err) => dispatch(bookingFail()));
+      .catch((err) => {
+        Swal.fire(err.response.data.error);
+        return dispatch(bookingFail());
+      });
   };
 };
 

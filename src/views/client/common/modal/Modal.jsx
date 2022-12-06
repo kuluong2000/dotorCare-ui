@@ -74,15 +74,14 @@ export default function Modal({ data, visible = false, onCancel }) {
           department: data?._id,
         })
       );
-      console.log(formData);
-
       const listBtn = document.querySelectorAll(`.${cx('list-btn')} > button`);
       listBtn.forEach((item) => item.classList.remove(`${cx('active')}`));
       onCancel();
+
       setFormData({
         ...formData,
         message: '',
-        date: moment().format('YYYY-MM-DD'),
+        // date: moment(),
       });
     }
   };
