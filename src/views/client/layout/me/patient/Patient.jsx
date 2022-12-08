@@ -159,6 +159,8 @@ export default function Patient() {
               Xem chi tiết
             </Button>
           );
+        } else {
+          return 'Chưa khám';
         }
       },
     },
