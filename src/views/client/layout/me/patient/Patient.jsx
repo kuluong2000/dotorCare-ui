@@ -150,7 +150,7 @@ export default function Patient() {
     {
       title: 'Hành động',
       key: 'operation',
-      width: 200,
+      width: 150,
       fixed: 'right',
       render: (text, record) => {
         if (record?.status === true) {
@@ -188,6 +188,9 @@ export default function Patient() {
         rowKey={(record) => record._id}
         columns={columns}
         dataSource={dataBooking}
+        pagination={{
+          defaultPageSize: 5,
+        }}
         scroll={{
           x: 1300,
         }}

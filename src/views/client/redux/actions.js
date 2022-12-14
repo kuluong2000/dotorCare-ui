@@ -109,6 +109,7 @@ export const UpdateMe = (id, data) => {
       .then((res) => {
         if (res.status === 200) {
           localStorage.setItem('data-user', JSON.stringify(res.data.data));
+          Swal.fire('cập nhật thành công');
           return dispatch(setUserData(res.data.data));
         } else {
           return dispatch(updateUserFail());
@@ -197,11 +198,9 @@ export const getAllDoctorOfDepartment = (id) => {
       .get(`${BASE_URL}/admin/doctor/${id}`)
       .then((res) => {
         if (res.status === 200) {
-          localStorage.setItem(
-            'doctorOfDepartment',
-            JSON.stringify(res.data.data)
-          );
-          return dispatch(getAllDoctorOfDepartmentSuccess(res.data.data));
+          const data = res.data.data.filter((item) => item.status === true);
+          localStorage.setItem('doctorOfDepartment', JSON.stringify(data));
+          return dispatch(getAllDoctorOfDepartmentSuccess(data));
         } else {
           return dispatch(getAllDoctorOfDepartmentFail());
         }

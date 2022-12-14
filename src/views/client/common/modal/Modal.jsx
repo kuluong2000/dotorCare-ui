@@ -81,6 +81,7 @@ export default function Modal({ data, visible = false, onCancel }) {
       setFormData({
         ...formData,
         message: '',
+        date: moment(),
         // date: moment(),
       });
     }
