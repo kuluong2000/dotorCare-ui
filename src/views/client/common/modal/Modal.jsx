@@ -63,7 +63,7 @@ export default function Modal({ data, visible = false, onCancel }) {
   //handle submit
   const handleSubmit = () => {
     if (!formData?.date || !formData?.time || !formData?.message) {
-      alert('vui lòng nhập đầy đủ thông tin');
+      Swal.fire('vui lòng nhập đầy đủ thông tin');
     } else {
       dispatch(
         userBooking({

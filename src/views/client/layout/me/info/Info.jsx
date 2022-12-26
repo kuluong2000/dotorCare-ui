@@ -138,7 +138,7 @@ export default function Info() {
             src={
               file
                 ? URL.createObjectURL(file)
-                : formData?.image && `http://127.0.0.1:3030/${formData?.image}`
+                : formData?.image && `${BASE_URL}/${formData?.image}`
             }
             className="form-user-photo"
           ></Image>

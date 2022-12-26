@@ -95,11 +95,7 @@ export default function Service() {
                       <div className={cx('service-item-content')}>
                         <div className={cx('service-item-image')}>
                           <Image
-                            src={
-                              item.image
-                                ? `http://127.0.0.1:3030/${item.image}`
-                                : ''
-                            }
+                            src={item.image ? `${BASE_URL}/${item.image}` : ''}
                           />
                         </div>
                         <div className={cx('service-item-info')}>

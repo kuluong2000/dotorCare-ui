@@ -2,6 +2,7 @@ import React, { useEffect, useRef, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import classNames from 'classnames/bind';
 import styles from './header.module.scss';
+import BASE_URL from '../../utils/configUrl';
 //import Comp
 import Image from '../../common/image/Image';
 import Button from '../../common/button/Button';
@@ -223,9 +224,7 @@ export default function Header() {
                     <div className={cx('authen')}>
                       <div className={cx('user')}>
                         <div className={cx('avatar')}>
-                          <Image
-                            src={`http://127.0.0.1:3030/${dataUser?.image}`}
-                          ></Image>
+                          <Image src={`${BASE_URL}/${dataUser?.image}`}></Image>
                         </div>
                         <p
                           className={cx('name')}

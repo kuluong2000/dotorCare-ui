@@ -25,12 +25,12 @@ export default function Details() {
   useEffect(() => {
     const getAPI = () => {
       return Promise.all([
-        axios.get(`${BASE_URL}/admin/department/${slugs}`).then((res) => {
+        axios.get(`${BASE_URL}/api/admin/department/${slugs}`).then((res) => {
           if (res.status === 200) {
             setData(res.data.data.data);
           }
         }),
-        axios.get(`${BASE_URL}/admin/diseases/${slugs}`).then((res) => {
+        axios.get(`${BASE_URL}/api/admin/diseases/${slugs}`).then((res) => {
           setDiseases(res.data.data);
         }),
       ]);
@@ -74,9 +74,7 @@ export default function Details() {
               <div className={cx('banner-care-images-circle-1')}></div>
               <div className={cx('banner-care-images-circle-2')}></div>
               <div className={cx('banner-care-images-person')}>
-                <Image
-                  src={data && `http://127.0.0.1:3030/${data?.image}`}
-                ></Image>
+                <Image src={data && `${BASE_URL}/${data?.image}`}></Image>
               </div>
             </div>
             <div className={cx('banner-care-inner')}>

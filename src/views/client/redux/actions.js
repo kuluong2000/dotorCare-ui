@@ -66,7 +66,7 @@ export const login = (data) => {
   return (dispatch) => {
     dispatch(authenticationStart());
     axios
-      .post(`${BASE_URL}/authen/login`, {
+      .post(`${BASE_URL}/api/authen/login`, {
         username: data.username,
         password: data.password,
       })
@@ -105,7 +105,7 @@ export const UpdateMe = (id, data) => {
   return (dispatch) => {
     dispatch(updateUserStart());
     axios
-      .patch(`${BASE_URL}/user/me/${id}`, data)
+      .patch(`${BASE_URL}/api/user/me/${id}`, data)
       .then((res) => {
         if (res.status === 200) {
           localStorage.setItem('data-user', JSON.stringify(res.data.data));
@@ -141,7 +141,7 @@ export const getAllBookingPatient = (id) => {
   return (dispatch) => {
     dispatch(bookingStart());
     axios
-      .get(`${BASE_URL}/user/booking/${id}`)
+      .get(`${BASE_URL}/api/user/booking/${id}`)
       .then((res) => {
         if (res.status === 200) {
           localStorage.setItem('booking', JSON.stringify(res.data.data));
@@ -157,11 +157,11 @@ export const userBooking = (data) => {
   return (dispatch) => {
     dispatch(bookingStart());
     axios
-      .post(`${BASE_URL}/user/booking`, data)
+      .post(`${BASE_URL}/api/user/booking`, data)
       .then((res) => {
         console.log(res.data);
         if (res.status === 201) {
-          return alert('đặt thành công');
+          return Swal.fire('đặt thành công');
         } else {
           return dispatch(bookingFail());
         }
@@ -195,7 +195,7 @@ export const getAllDoctorOfDepartment = (id) => {
   return (dispatch) => {
     dispatch(getAllDoctorOfDepartmentStart());
     axios
-      .get(`${BASE_URL}/admin/doctor/${id}`)
+      .get(`${BASE_URL}/api/admin/doctor/${id}`)
       .then((res) => {
         if (res.status === 200) {
           const data = res.data.data.filter((item) => item.status === true);
@@ -233,7 +233,7 @@ export const getAllDepartmentOfDiseases = (data) => {
     // const keyWord = json
     if (data) {
       axios
-        .get(`${BASE_URL}/admin/departmentOfDiseases?nameDiseases=${data}`)
+        .get(`${BASE_URL}/api/admin/departmentOfDiseases?nameDiseases=${data}`)
         .then((res) => {
           if (res.status === 200) {
             return dispatch(getAllDepartmentSuccess(res.data.data));
@@ -244,7 +244,7 @@ export const getAllDepartmentOfDiseases = (data) => {
         .catch((err) => dispatch(getAllDepartmentFail()));
     } else {
       axios
-        .get(`${BASE_URL}/admin/departmentOfDiseases`)
+        .get(`${BASE_URL}/api/admin/departmentOfDiseases`)
         .then((res) => {
           if (res.status === 200) {
             return dispatch(getAllDepartmentSuccess(res.data.data));
