@@ -4,7 +4,7 @@ import Swal from 'sweetalert2';
 export const apiService = {
   register: (data) => {
     return axios
-      .post(`${BASE_URL}/authen/signUp`, data)
+      .post(`${BASE_URL}/api/authen/signUp`, data)
       .then((res) => {
         return res.data.data;
       })
@@ -12,7 +12,7 @@ export const apiService = {
   },
   login: (data) => {
     axios
-      .post(`${BASE_URL}/authen/login`, {
+      .post(`${BASE_URL}/api/authen/login`, {
         username: data.username,
         password: data.password,
       })
