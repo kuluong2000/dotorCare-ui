@@ -5,6 +5,7 @@ import {
   authenticationSuccess,
   setPatientData,
   bookingSuccess,
+  getAllDoctorSuccess,
   getAllDoctorOfDepartmentSuccess,
 } from '../../redux/actions';
 
@@ -16,6 +17,7 @@ function Authentication() {
     const tokenLocal = JSON.parse(localStorage.getItem('token'));
     const patient = JSON.parse(localStorage.getItem('patient'));
     const booking = JSON.parse(localStorage.getItem('booking'));
+    const doctor = JSON.parse(localStorage.getItem('doctor'));
     const doctorOfDepartment = JSON.parse(
       localStorage.getItem('doctorOfDepartment')
     );
@@ -25,6 +27,7 @@ function Authentication() {
         dispatch(setUserData(dataUserLocal)),
         dispatch(setPatientData(patient)),
         dispatch(bookingSuccess(booking)),
+        dispatch(getAllDoctorSuccess(doctor)),
         // dispatch(getAllDoctorOfDepartmentSuccess(doctorOfDepartment)),
       ]);
     }

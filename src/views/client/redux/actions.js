@@ -195,7 +195,7 @@ export const getAllDoctorOfDepartment = (id) => {
   return (dispatch) => {
     dispatch(getAllDoctorOfDepartmentStart());
     axios
-      .get(`${BASE_URL}/api/admin/doctor/${id}`)
+      .get(`${BASE_URL}/api/admin/doctorOfDepartment/${id}`)
       .then((res) => {
         if (res.status === 200) {
           const data = res.data.data.filter((item) => item.status === true);
@@ -254,5 +254,37 @@ export const getAllDepartmentOfDiseases = (data) => {
         })
         .catch((err) => dispatch(getAllDepartmentFail()));
     }
+  };
+};
+
+export const getAllDoctorStart = () => {
+  return {
+    type: actionType.GET_ALL_DOCTOR_START,
+  };
+};
+export const getAllDoctorSuccess = (data) => {
+  return {
+    type: actionType.GET_ALL_DOCTOR_SUCCESS,
+    payload: data,
+  };
+};
+export const getAllDoctorFail = () => {
+  return {
+    type: actionType.GET_ALL_DOCTOR_FAIL,
+  };
+};
+export const getAllDoctor = () => {
+  return (dispatch) => {
+    dispatch(getAllDoctorStart());
+    axios
+      .get(`${BASE_URL}/api/admin/doctor`)
+      .then((res) => {
+        if (res.status === 200) {
+          return localStorage.setItem('doctor', JSON.stringify(res.data.data));
+        } else {
+          return dispatch(getAllDoctorFail());
+        }
+      })
+      .catch((err) => dispatch(getAllDoctorFail()));
   };
 };
