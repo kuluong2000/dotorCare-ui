@@ -166,28 +166,32 @@ export default function BookClinic() {
                   <li className={cx('exp-item')}>
                     <span className={cx('exp-item-icon')}>
                       <Image
-                        src={
-                          require('../../assets/images/clinic/clinical_experience-icon.svg')
-                            .default
-                        }
+                        // src={
+                        //   require('../../assets/images/clinic/clinical_experience-icon.svg')
+                        //     .default
+                        // }
+                        src={`${BASE_URL}/${data?.account?.people?.image}`}
                       ></Image>
                     </span>
                     <div className={cx('exp-item-content')}>
                       <h4 className={cx('exp-item-title')}>
-                        Quá trình công tác
+                        Học vấn và Quá trình công tác
                       </h4>
                       <p className={cx('exp-item-info')}>
-                        <span>2011 - nay:</span>
-                        Giảng viên Đại học Y Dược TP.HCM
+                        <span>Từng học tại:</span>
+                        {data?.education}
                       </p>
                       <p className={cx('exp-item-info')}>
-                        <span>2008 - 2011:</span>
-                        Bác sĩ Nội trú tại Bệnh viện Chợ Rẫy. Bệnh viện Nhân dân
-                        Gia Định
+                        <span>Đơn vị công tác cũ:</span>
+                        {data?.oldWork}
+                      </p>
+                      <p className={cx('exp-item-info')}>
+                        <span>Nơi làm việc hiện tại:</span>
+                        phòng khám đa khoa Jio Health
                       </p>
                     </div>
                   </li>
-                  <li className={cx('exp-item')}>
+                  {/* <li className={cx('exp-item')}>
                     <span className={cx('exp-item-icon')}>
                       <Image
                         src={
@@ -233,7 +237,7 @@ export default function BookClinic() {
                         Siêu âm tim và mạch máu, Đại học Y Dược TP.HCM.
                       </p>
                     </div>
-                  </li>
+                  </li> */}
                 </ul>
               </div>
             </div>

@@ -26,6 +26,7 @@
 }
 .banner-main {
   display: flex;
+  flex-direction: row-reverse;
   padding: 0 100px;
 }
 .info {
@@ -50,8 +51,8 @@
 .avatar {
   max-height: 620px;
   position: absolute;
-  right: 0%;
-  transform: translateX(-50%);
+  left: 0%;
+  transform: translateX(20%);
   z-index: 1;
   bottom: 0;
   img {
@@ -87,7 +88,7 @@
   margin-bottom: 30px;
 
   &::after {
-    content: "";
+    content: '';
     position: absolute;
     bottom: 0;
     left: 0;
@@ -146,6 +147,7 @@
     padding-left: 30px;
   }
   &-title {
+    color: var(--color-white);
     font-size: 30px;
     font-weight: bold;
     line-height: 1.35;
@@ -166,7 +168,7 @@
       padding-right: 10px;
       line-height: 1;
       font-family: var(--font-awesome);
-      content: "\f00c";
+      content: '\f00c';
     }
   }
 }

@@ -280,7 +280,8 @@ export const getAllDoctor = () => {
       .get(`${BASE_URL}/api/admin/doctor`)
       .then((res) => {
         if (res.status === 200) {
-          return localStorage.setItem('doctor', JSON.stringify(res.data.data));
+          localStorage.setItem('doctor', JSON.stringify(res.data.data));
+          return dispatch(getAllDoctorSuccess(res.data.data));
         } else {
           return dispatch(getAllDoctorFail());
         }

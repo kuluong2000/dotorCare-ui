@@ -19,6 +19,8 @@ import { Link } from 'react-router-dom';
 
 import { getAllDoctor } from './../../redux/actions';
 import BASE_URL from '../../utils/configUrl';
+import { Spin } from 'antd';
+import { LoadingOutlined } from '@ant-design/icons';
 
 const cx = classNames.bind(styles);
 export default function Service() {
@@ -232,7 +234,7 @@ export default function Service() {
               </div>
               <div className={cx('doctor-content')}>
                 <ul className={cx('doctor-list')}>
-                  {doctor &&
+                  {doctor ? (
                     doctor.map((el, idx) => (
                       <li key={idx} className={cx('doctor-item')}>
                         <div className={cx('doctor-info')}>
@@ -263,7 +265,19 @@ export default function Service() {
                           <Button to={`/bac-si/${el._id}`}>Xem chi tiết</Button>
                         </div>
                       </li>
-                    ))}
+                    ))
+                  ) : (
+                    <Spin
+                      indicator={
+                        <LoadingOutlined
+                          style={{
+                            fontSize: 24,
+                          }}
+                          spin
+                        />
+                      }
+                    />
+                  )}
                 </ul>
                 <div className={cx('doctor-view-more')}>
                   <Button>Xem thêm</Button>
