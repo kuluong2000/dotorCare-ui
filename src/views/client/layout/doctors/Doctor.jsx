@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import classNames from 'classnames/bind';
 
 import { useSelector, useDispatch } from 'react-redux';
@@ -21,15 +21,18 @@ import { getAllDoctor } from './../../redux/actions';
 import BASE_URL from '../../utils/configUrl';
 import { Spin } from 'antd';
 import { LoadingOutlined } from '@ant-design/icons';
-
+import useDebounce from '../../hook/useDebounce';
 const cx = classNames.bind(styles);
 export default function Service() {
   const dispatch = useDispatch();
-  const { doctor } = useSelector((state) => state.doctor);
+  const { loading, doctor } = useSelector((state) => state.doctor);
+
+  const [searchValue, setSearchValue] = useState('');
+  const debounceValue = useDebounce(searchValue, 700);
 
   useEffect(() => {
-    dispatch(getAllDoctor());
-  }, []);
+    dispatch(getAllDoctor(debounceValue));
+  }, [debounceValue, dispatch]);
   console.log(doctor);
   const handleOnChangeValue = (e) => {
     const select = e.target;
@@ -213,28 +216,27 @@ export default function Service() {
               <h2 className={cx('title')}>Tìm bác sĩ của bạn</h2>
               <div className={cx('search-form')}>
                 <div className={cx(['form-group', 'form-group-name'])}>
-                  <input type="text" placeholder="Tìm theo tên" />
-                  <Button>
-                    <FontAwesomeIcon icon={faSearch} />
-                  </Button>
-                </div>
-                <div className={cx(['form-group', 'form-group-select'])}>
-                  <select
-                    defaultValue={'DEFAULT'}
-                    className={cx('jio-select')}
-                    onChange={handleOnChangeValue}
-                  >
-                    <option value="DEFAULT">Tìm theo chuyên khoa</option>
-                    <option value="1">Thuốc gây nghiện</option>
-                    <option value="2">Dị Ứng Miễn Dịch</option>
-                    <option value="3">Gây Mê</option>
-                    <option value="4">Điện sinh tim</option>
-                  </select>
+                  <input
+                    type="text"
+                    placeholder="Tìm theo tên"
+                    onChange={(e) => setSearchValue(e.target.value)}
+                  />
                 </div>
               </div>
               <div className={cx('doctor-content')}>
                 <ul className={cx('doctor-list')}>
-                  {doctor ? (
+                  {loading || (!debounceValue && searchValue) ? (
+                    <Spin
+                      indicator={
+                        <LoadingOutlined
+                          style={{
+                            fontSize: 24,
+                          }}
+                          spin
+                        />
+                      }
+                    />
+                  ) : doctor ? (
                     doctor.map((el, idx) => (
                       <li key={idx} className={cx('doctor-item')}>
                         <div className={cx('doctor-info')}>
@@ -267,16 +269,9 @@ export default function Service() {
                       </li>
                     ))
                   ) : (
-                    <Spin
-                      indicator={
-                        <LoadingOutlined
-                          style={{
-                            fontSize: 24,
-                          }}
-                          spin
-                        />
-                      }
-                    />
+                    <p className="w-100 text-center">
+                      Không tìm thấy bác sĩ phù hợp hoặc từ khóa nhập vào bị sai
+                    </p>
                   )}
                 </ul>
                 <div className={cx('doctor-view-more')}>

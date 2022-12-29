@@ -273,19 +273,33 @@ export const getAllDoctorFail = () => {
     type: actionType.GET_ALL_DOCTOR_FAIL,
   };
 };
-export const getAllDoctor = () => {
+export const getAllDoctor = (nameDoctor) => {
   return (dispatch) => {
     dispatch(getAllDoctorStart());
-    axios
-      .get(`${BASE_URL}/api/admin/doctor`)
-      .then((res) => {
-        if (res.status === 200) {
-          localStorage.setItem('doctor', JSON.stringify(res.data.data));
-          return dispatch(getAllDoctorSuccess(res.data.data));
-        } else {
-          return dispatch(getAllDoctorFail());
-        }
-      })
-      .catch((err) => dispatch(getAllDoctorFail()));
+    if (nameDoctor) {
+      axios
+        .get(`${BASE_URL}/api/admin/doctor?nameDoctor=${nameDoctor}`)
+        .then((res) => {
+          if (res.status === 200) {
+            localStorage.setItem('doctor', JSON.stringify(res.data.data));
+            return dispatch(getAllDoctorSuccess(res.data.data));
+          } else {
+            return dispatch(getAllDoctorFail());
+          }
+        })
+        .catch((err) => dispatch(getAllDoctorFail()));
+    } else {
+      axios
+        .get(`${BASE_URL}/api/admin/doctor`)
+        .then((res) => {
+          if (res.status === 200) {
+            localStorage.setItem('doctor', JSON.stringify(res.data.data));
+            return dispatch(getAllDoctorSuccess(res.data.data));
+          } else {
+            return dispatch(getAllDoctorFail());
+          }
+        })
+        .catch((err) => dispatch(getAllDoctorFail()));
+    }
   };
 };
