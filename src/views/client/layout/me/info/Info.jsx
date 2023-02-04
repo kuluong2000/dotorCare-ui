@@ -38,7 +38,10 @@ export default function Info() {
       const formDataFile = new FormData();
       formDataFile.append('image', file);
       try {
-        const fileImage = await axios.post(`${BASE_URL}/upload`, formDataFile);
+        const fileImage = await axios.post(
+          `${BASE_URL}/api/upload`,
+          formDataFile
+        );
         return dispatch(
           UpdateMe(dataUser._id, { ...formData, image: fileImage.data.data })
         );
